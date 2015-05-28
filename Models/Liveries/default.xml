@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">Blue Angels</name>
+        <texture n="0">blueangel.png</texture>
+        <texture n="1">rudder.png</texture>
+        <texture n="2">fuselage.png</texture>
+        <texture n="3">wing-stab.png</texture>
+      </livery>
+    </model>
+  </sim>
+</PropertyList>

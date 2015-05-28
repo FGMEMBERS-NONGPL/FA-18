@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>climb.ac</path>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Needle</object-name>
+  <property>velocities/vertical-speed-fps</property>
+  <!--
+  <property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+  -->
+  <interpolation>
+   <entry><ind>-100</ind><dep>-168</dep></entry>
+   <entry><ind>-66.66666</ind><dep>-144</dep></entry>
+   <entry><ind>-33.33333</ind><dep>-108</dep></entry>
+   <entry><ind>-16.66666</ind><dep>-72</dep></entry>
+   <entry><ind>16.66666</ind><dep>72</dep></entry>
+   <entry><ind>33.33333</ind><dep>108</dep></entry>
+   <entry><ind>66.66666</ind><dep>144</dep></entry>
+   <entry><ind>100</ind><dep>168</dep></entry>
+  <!--
+   <entry><ind>-6000</ind><dep>-168</dep></entry>
+   <entry><ind>-4000</ind><dep>-144</dep></entry>
+   <entry><ind>-2000</ind><dep>-108</dep></entry>
+   <entry><ind>-1000</ind><dep>-72</dep></entry>
+   <entry><ind>1000</ind><dep>72</dep></entry>
+   <entry><ind>2000</ind><dep>108</dep></entry>
+   <entry><ind>4000</ind><dep>144</dep></entry>
+   <entry><ind>6000</ind><dep>168</dep></entry>
+  -->
+  </interpolation>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>

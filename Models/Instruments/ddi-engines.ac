@@ -1,0 +1,3796 @@
+AC3Db
+MATERIAL "ac3dmat2" rgb 0.118 0.2 0  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat1" rgb 0 0 0  amb 0.2 0.2 0.2  emis 0.133 1 0.165  spec 0 0 0  shi 10  trans 0.2
+OBJECT world
+kids 151
+OBJECT poly
+name "Display"
+loc -0.0504031 2.38419e-07 5.00679e-06
+crease 45.000000
+numvert 28
+0.0320129 0.0625999 -0.0574949
+0.0320129 0.0625999 0.0574954
+0.0320129 0.0621197 0.0608351
+0.0320129 0.0608399 0.063915
+0.0320129 0.0588 0.0665653
+0.0320129 0.0561397 0.0685952
+0.0320129 0.0530398 0.069875
+0.0320129 0.0498197 0.0702651
+0.0320129 -0.06516 0.0702651
+0.0320129 -0.0684702 0.069865
+0.0320129 -0.0715501 0.0685852
+0.0320129 -0.0741999 0.0665452
+0.0320129 -0.0762303 0.063885
+0.0320129 -0.0775101 0.0607951
+0.0320129 -0.0779402 0.0574954
+0.0320129 -0.0779402 -0.0574949
+0.0320129 -0.0775402 -0.0608246
+0.0320129 -0.0762603 -0.063905
+0.0320129 -0.0742199 -0.0665548
+0.0320129 -0.0715601 -0.0685947
+0.0320129 -0.0684602 -0.069865
+0.0320129 -0.06516 -0.0702746
+0.0320129 0.0498197 -0.0702746
+0.0320129 0.0531399 -0.0699046
+0.0320129 0.0562298 -0.0686247
+0.0320129 0.0588701 -0.0665848
+0.0320129 0.06091 -0.0639246
+0.0320129 0.0621798 -0.0608246
+numsurf 26
+SURF 0x0
+mat 0
+refs 3
+7 1.1065 1.62976
+22 1.1065 1.62976
+23 1.1065 1.64723
+SURF 0x0
+mat 0
+refs 3
+16 0.791883 0.921777
+22 0.791883 0.974083
+7 0.791883 0.974083
+SURF 0x0
+mat 0
+refs 3
+17 0.791883 0.922303
+22 0.791883 0.974083
+16 0.791883 0.921777
+SURF 0x0
+mat 0
+refs 3
+18 0.791883 0.923141
+22 0.791883 0.974083
+17 0.791883 0.922303
+SURF 0x0
+mat 0
+refs 3
+19 0.791883 0.924233
+22 0.791883 0.974083
+18 0.791883 0.923141
+SURF 0x0
+mat 0
+refs 3
+20 0.791883 0.925506
+22 0.791883 0.974083
+19 0.791883 0.924233
+SURF 0x0
+mat 0
+refs 3
+21 0.791883 0.926862
+22 0.791883 0.974083
+20 0.791883 0.925506
+SURF 0x0
+mat 0
+refs 3
+7 1.1065 1.62976
+23 1.1065 1.64723
+24 1.1065 1.66349
+SURF 0x0
+mat 0
+refs 3
+26 1.1065 1.68811
+27 1.1065 1.69479
+0 1.1065 1.697
+SURF 0x0
+mat 0
+refs 3
+26 1.1065 1.68811
+0 1.1065 1.697
+1 1.1065 1.697
+SURF 0x0
+mat 0
+refs 3
+26 1.1065 1.68811
+1 1.1065 1.697
+2 1.1065 1.69448
+SURF 0x0
+mat 0
+refs 3
+26 1.1065 1.68811
+2 1.1065 1.69448
+3 1.1065 1.68774
+SURF 0x0
+mat 0
+refs 3
+26 1.1065 1.68811
+3 1.1065 1.68774
+4 1.1065 1.67701
+SURF 0x0
+mat 0
+refs 3
+26 1.1065 1.68811
+4 1.1065 1.67701
+5 1.1065 1.66301
+SURF 0x0
+mat 0
+refs 3
+26 1.1065 1.68811
+5 1.1065 1.66301
+6 1.1065 1.6467
+SURF 0x0
+mat 0
+refs 3
+26 1.1065 1.68811
+6 1.1065 1.6467
+7 1.1065 1.62976
+SURF 0x0
+mat 0
+refs 3
+9 0.791883 0.925502
+7 0.791883 0.974083
+8 0.791883 0.926862
+SURF 0x0
+mat 0
+refs 3
+10 0.791883 0.924237
+7 0.791883 0.974083
+9 0.791883 0.925502
+SURF 0x0
+mat 0
+refs 3
+11 0.791883 0.923149
+7 0.791883 0.974083
+10 0.791883 0.924237
+SURF 0x0
+mat 0
+refs 3
+12 0.791883 0.922315
+7 0.791883 0.974083
+11 0.791883 0.923149
+SURF 0x0
+mat 0
+refs 3
+13 0.791883 0.921789
+7 0.791883 0.974083
+12 0.791883 0.922315
+SURF 0x0
+mat 0
+refs 3
+14 0.791883 0.921613
+7 0.791883 0.974083
+13 0.791883 0.921789
+SURF 0x0
+mat 0
+refs 3
+15 0.791883 0.921613
+7 0.791883 0.974083
+14 0.791883 0.921613
+SURF 0x0
+mat 0
+refs 3
+16 0.791883 0.921777
+7 0.791883 0.974083
+15 0.791883 0.921613
+SURF 0x0
+mat 0
+refs 3
+26 1.1065 1.68811
+7 1.1065 1.62976
+24 1.1065 1.66349
+SURF 0x0
+mat 0
+refs 3
+25 1.1065 1.67738
+26 1.1065 1.68811
+24 1.1065 1.66349
+kids 0
+OBJECT poly
+name "I"
+loc -0.0175 0.0376426 0.0335647
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 0.0113574 -0.0103635
+0 0.0113574 -0.00436354
+0 0.0193574 -0.00436354
+0 0.0193574 -0.0103635
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.2
+2 0 0.2
+0 1 0.1
+SURF 0x0
+mat 1
+refs 3
+2 0 0.2
+1 0 0.1
+0 1 0.1
+kids 0
+OBJECT poly
+name "N"
+loc -0.0175 0.0376326 0.0283413
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 0.0113674 -0.0111457
+0 0.0113674 -0.00514572
+0 0.0193674 -0.00514572
+0 0.0193674 -0.0111457
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.7
+2 0 0.7
+0 1 0.6
+SURF 0x0
+mat 1
+refs 3
+2 0 0.7
+1 0 0.6
+0 1 0.6
+kids 0
+OBJECT poly
+name "L"
+loc -0.0175 0.0376558 0.0231562
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 0.0113442 -0.0119279
+0 0.0113442 -0.00592792
+0 0.0193442 -0.00592792
+0 0.0193442 -0.0119279
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.9
+2 0 0.9
+0 1 0.8
+SURF 0x0
+mat 1
+refs 3
+2 0 0.9
+1 0 0.8
+0 1 0.8
+kids 0
+OBJECT poly
+name "E"
+loc -0.0175 0.0376641 0.0163607
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 0.0113358 -0.0111457
+0 0.0113358 -0.00514573
+0 0.0193359 -0.00514573
+0 0.0193359 -0.0111457
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.6
+2 0 0.6
+0 1 0.5
+SURF 0x0
+mat 1
+refs 3
+2 0 0.6
+1 0 0.5
+0 1 0.5
+kids 0
+OBJECT poly
+name "T"
+loc -0.0175 0.0376756 0.00957876
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 0.0113243 -0.0103635
+0 0.0113243 -0.00436354
+0 0.0193243 -0.00436354
+0 0.0193243 -0.0103635
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "T"
+loc -0.0175 0.0378212 -0.000815077
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 0.0191788 -0.0103635
+0 0.0191788 -0.00436354
+0 0.0111788 -0.00436354
+0 0.0111788 -0.0103635
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "E"
+loc -0.0175 0.0377955 -0.00602416
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 0.0112045 -0.0111457
+0 0.0112045 -0.00514573
+0 0.0192045 -0.00514573
+0 0.0192045 -0.0111457
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.6
+2 0 0.6
+0 1 0.5
+SURF 0x0
+mat 1
+refs 3
+2 0 0.6
+1 0 0.5
+0 1 0.5
+kids 0
+OBJECT poly
+name "M"
+loc -0.0175 0.0377975 -0.0116422
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 0.0192025 -0.0115368
+0 0.0192025 -0.00553683
+0 0.0112025 -0.00553683
+0 0.0112025 -0.0115368
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.8
+2 0 0.7
+3 1 0.7
+SURF 0x0
+mat 1
+refs 3
+0 1 0.8
+1 0 0.8
+3 1 0.7
+kids 0
+OBJECT poly
+name "P"
+loc -0.0175 0.0378149 -0.0184465
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 0.0111851 -0.0107546
+0 0.0111851 -0.00475463
+0 0.0191851 -0.00475463
+0 0.0191851 -0.0107546
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.5
+2 0 0.5
+0 1 0.4
+SURF 0x0
+mat 1
+refs 3
+2 0 0.5
+1 0 0.4
+0 1 0.4
+kids 0
+OBJECT poly
+name "N"
+loc -0.0175 0.0430743 0.0142805
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.00407432 -0.00378218
+0 -0.00407432 0.00221781
+0 0.00392568 0.00221781
+0 0.00392568 -0.00378218
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.7
+2 0 0.7
+0 1 0.6
+SURF 0x0
+mat 1
+refs 3
+2 0 0.7
+1 0 0.6
+0 1 0.6
+kids 0
+OBJECT poly
+name "1"
+loc -0.0175 0.0430743 0.00750656
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.0039257 -0.00300001
+0 0.0039257 0.00300001
+0 -0.00407431 0.00300001
+0 -0.00407431 -0.00300001
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.2
+2 0 0.1
+3 1 0.1
+SURF 0x0
+mat 1
+refs 3
+0 1 0.2
+1 0 0.2
+3 1 0.1
+kids 0
+OBJECT poly
+name "R"
+loc -0.0175 0.043 -0.00149855
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.004 -0.003
+0 -0.004 0.00300001
+0 0.004 0.00300001
+0 0.004 -0.003
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.3
+2 0 0.3
+0 1 0.2
+SURF 0x0
+mat 1
+refs 3
+2 0 0.3
+1 0 0.2
+0 1 0.2
+kids 0
+OBJECT poly
+name "P"
+loc -0.0175 0.0430016 -0.00710567
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.00400158 -0.0033911
+0 -0.00400158 0.00260891
+0 0.00399842 0.00260891
+0 0.00399842 -0.0033911
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.5
+2 0 0.5
+0 1 0.4
+SURF 0x0
+mat 1
+refs 3
+2 0 0.5
+1 0 0.4
+0 1 0.4
+kids 0
+OBJECT poly
+name "M"
+loc -0.0175 0.0430011 -0.012325
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 0.00399894 -0.0041733
+0 0.00399894 0.00182672
+0 -0.00400107 0.00182672
+0 -0.00400107 -0.0041733
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.8
+2 0 0.7
+3 1 0.7
+SURF 0x0
+mat 1
+refs 3
+0 1 0.8
+1 0 0.8
+3 1 0.7
+kids 0
+OBJECT poly
+name "M"
+loc -0.0175 0.0402056 -0.00965746
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.0112056 -0.00684082
+0 -0.0112056 -0.000840804
+0 -0.0032056 -0.000840804
+0 -0.0032056 -0.00684082
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.8
+2 0 0.8
+0 1 0.7
+SURF 0x0
+mat 1
+refs 3
+2 0 0.8
+1 0 0.7
+0 1 0.7
+kids 0
+OBJECT poly
+name "P"
+loc -0.0175 0.0402061 -0.00443815
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.00320611 -0.00605862
+0 -0.00320611 -5.86137e-05
+0 -0.0112061 -5.86137e-05
+0 -0.0112061 -0.00605862
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.5
+2 0 0.4
+3 1 0.4
+SURF 0x0
+mat 1
+refs 3
+0 1 0.5
+1 0 0.5
+3 1 0.4
+kids 0
+OBJECT poly
+name "R"
+loc -0.0175 0.0402045 0.00116898
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.00320453 -0.00566753
+0 -0.00320453 0.000332482
+0 -0.0112045 0.000332482
+0 -0.0112045 -0.00566753
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.3
+2 0 0.2
+3 1 0.2
+SURF 0x0
+mat 1
+refs 3
+0 1 0.3
+1 0 0.3
+3 1 0.2
+kids 0
+OBJECT poly
+name "N"
+loc -0.0175 0.0402788 0.016948
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.00327885 -0.0064497
+0 -0.00327885 -0.00044971
+0 -0.0112788 -0.00044971
+0 -0.0112788 -0.0064497
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.7
+2 0 0.6
+3 1 0.6
+SURF 0x0
+mat 1
+refs 3
+0 1 0.7
+1 0 0.7
+3 1 0.6
+kids 0
+OBJECT poly
+name "2"
+loc -0.0175 0.033 0.00749845
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.004 -0.00300001
+0 -0.004 0.00300001
+0 0.00399999 0.00300001
+0 0.00399999 -0.00300001
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.3
+2 0 0.3
+0 1 0.2
+SURF 0x0
+mat 1
+refs 3
+2 0 0.3
+1 0 0.2
+0 1 0.2
+kids 0
+OBJECT poly
+name "E"
+loc -0.0175 0.023034 0.00677624
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 -0.00403403 -0.00378221
+0 -0.00403403 0.00221781
+0 0.00396597 0.00221781
+0 0.00396597 -0.00378221
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.6
+2 0 0.6
+0 1 0.5
+SURF 0x0
+mat 1
+refs 3
+2 0 0.6
+1 0 0.5
+0 1 0.5
+kids 0
+OBJECT poly
+name "G"
+loc -0.0175 0.0230106 -2.37022e-05
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 -0.00401056 -0.00300001
+0 -0.00401056 0.00300001
+0 0.00398944 0.00300001
+0 0.00398944 -0.00300001
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.4
+2 0 0.4
+0 1 0.3
+SURF 0x0
+mat 1
+refs 3
+2 0 0.4
+1 0 0.3
+0 1 0.3
+kids 0
+OBJECT poly
+name "T"
+loc -0.0175 0.023 -0.00599405
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.004 -0.00300001
+0 -0.004 0.003
+0 0.004 0.003
+0 0.004 -0.00300001
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "F"
+loc -0.0175 0.013 0.00339604
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 0.004 -0.00339109
+0 0.004 0.00260891
+0 -0.004 0.00260891
+0 -0.004 -0.00339109
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.5
+2 0 0.4
+3 1 0.4
+SURF 0x0
+mat 1
+refs 3
+0 1 0.5
+1 0 0.5
+3 1 0.4
+kids 0
+OBJECT poly
+name "F"
+loc -0.0175 0.0130085 -0.00261387
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 -0.00400855 -0.00339109
+0 -0.00400855 0.00260891
+0 0.00399146 0.00260891
+0 0.00399146 -0.00339109
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.5
+2 0 0.5
+0 1 0.4
+SURF 0x0
+mat 1
+refs 3
+2 0 0.5
+1 0 0.4
+0 1 0.4
+kids 0
+OBJECT poly
+name "N"
+loc -0.0175 0.00318529 0.0181115
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.0041853 -0.00378218
+0 -0.0041853 0.00221781
+0 0.0038147 0.00221781
+0 0.0038147 -0.00378218
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.7
+2 0 0.7
+0 1 0.6
+SURF 0x0
+mat 1
+refs 3
+2 0 0.7
+1 0 0.6
+0 1 0.6
+kids 0
+OBJECT poly
+name "O"
+loc -0.0175 0.00314861 0.0120998
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 0.00385139 -0.0037822
+0 0.00385139 0.00221781
+0 -0.00414861 0.00221781
+0 -0.00414861 -0.0037822
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.6
+2 0 0.5
+3 1 0.5
+SURF 0x0
+mat 1
+refs 3
+0 1 0.6
+1 0 0.6
+3 1 0.5
+kids 0
+OBJECT poly
+name "Z"
+loc -0.0175 0.00318115 0.00571612
+texture "transp-uvwxyz.rgb"
+crease 45.000000
+numvert 4
+0 0.00381885 -0.0033911
+0 0.00381885 0.0026089
+0 -0.00418115 0.0026089
+0 -0.00418115 -0.0033911
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.5
+2 0 0.4
+3 1 0.4
+SURF 0x0
+mat 1
+refs 3
+0 1 0.5
+1 0 0.5
+3 1 0.4
+kids 0
+OBJECT poly
+name "P"
+loc -0.0175 0.003 -0.00489939
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.004 -0.0033911
+0 -0.004 0.00260891
+0 0.004 0.00260891
+0 0.004 -0.0033911
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.5
+2 0 0.5
+0 1 0.4
+SURF 0x0
+mat 1
+refs 3
+2 0 0.5
+1 0 0.4
+0 1 0.4
+kids 0
+OBJECT poly
+name "O"
+loc -0.0175 0.00300841 -0.0105442
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 0.00399159 -0.0037822
+0 0.00399159 0.00221781
+0 -0.00400842 0.00221781
+0 -0.00400842 -0.0037822
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.6
+2 0 0.5
+3 1 0.5
+SURF 0x0
+mat 1
+refs 3
+0 1 0.6
+1 0 0.6
+3 1 0.5
+kids 0
+OBJECT poly
+name "S"
+loc -0.0175 0.0030087 -0.0173293
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 0.0039913 -0.00300001
+0 0.0039913 0.00300001
+0 -0.0040087 0.00300001
+0 -0.0040087 -0.00300001
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.2
+2 0 0.1
+3 1 0.1
+SURF 0x0
+mat 1
+refs 3
+0 1 0.2
+1 0 0.2
+3 1 0.1
+kids 0
+OBJECT poly
+name "O"
+loc -0.0175 -0.00671232 0.0236481
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 0.00371232 -0.0037822
+0 0.00371232 0.00221781
+0 -0.00428768 0.00221781
+0 -0.00428768 -0.0037822
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.6
+2 0 0.5
+3 1 0.5
+SURF 0x0
+mat 1
+refs 3
+0 1 0.6
+1 0 0.6
+3 1 0.5
+kids 0
+OBJECT poly
+name "I"
+loc -0.0175 -0.00672063 0.0168716
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 -0.00427937 -0.003
+0 -0.00427937 0.00300001
+0 0.00372063 0.00300001
+0 0.00372063 -0.003
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.2
+2 0 0.2
+0 1 0.1
+SURF 0x0
+mat 1
+refs 3
+2 0 0.2
+1 0 0.1
+0 1 0.1
+kids 0
+OBJECT poly
+name "L"
+loc -0.0175 -0.00670484 0.0124475
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.00429516 -0.00456439
+0 -0.00429516 0.00143562
+0 0.00370484 0.00143562
+0 0.00370484 -0.00456439
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.9
+2 0 0.9
+0 1 0.8
+SURF 0x0
+mat 1
+refs 3
+2 0 0.9
+1 0 0.8
+0 1 0.8
+kids 0
+OBJECT poly
+name "P"
+loc -0.0175 -0.00698564 0.00150762
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.00401437 -0.0033911
+0 -0.00401437 0.00260891
+0 0.00398564 0.00260891
+0 0.00398564 -0.0033911
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.5
+2 0 0.5
+0 1 0.4
+SURF 0x0
+mat 1
+refs 3
+2 0 0.5
+1 0 0.4
+0 1 0.4
+kids 0
+OBJECT poly
+name "R"
+loc -0.0175 -0.00698106 -0.00488661
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.00401894 -0.00300001
+0 -0.00401894 0.00300001
+0 0.00398106 0.00300001
+0 0.00398106 -0.00300001
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.3
+2 0 0.3
+0 1 0.2
+SURF 0x0
+mat 1
+refs 3
+2 0 0.3
+1 0 0.2
+0 1 0.2
+kids 0
+OBJECT poly
+name "E"
+loc -0.0175 -0.00698931 -0.0101072
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 -0.00401069 -0.0037822
+0 -0.00401069 0.00221781
+0 0.00398931 0.00221781
+0 0.00398931 -0.0037822
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.6
+2 0 0.6
+0 1 0.5
+SURF 0x0
+mat 1
+refs 3
+2 0 0.6
+1 0 0.5
+0 1 0.5
+kids 0
+OBJECT poly
+name "S"
+loc -0.0175 -0.00697919 -0.0168844
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 0.00397919 -0.003
+0 0.00397919 0.00300001
+0 -0.00402081 0.00300001
+0 -0.00402081 -0.003
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.2
+2 0 0.1
+3 1 0.1
+SURF 0x0
+mat 1
+refs 3
+0 1 0.2
+1 0 0.2
+3 1 0.1
+kids 0
+OBJECT poly
+name "S"
+loc -0.0175 -0.007 -0.0228659
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.004 -0.003
+0 -0.004 0.00300001
+0 0.004 0.00300001
+0 0.004 -0.003
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.2
+2 0 0.2
+0 1 0.1
+SURF 0x0
+mat 1
+refs 3
+2 0 0.2
+1 0 0.1
+0 1 0.1
+kids 0
+OBJECT poly
+name "T"
+loc -0.0175 -0.0169346 0.0150925
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.00406538 -0.00300001
+0 -0.00406538 0.003
+0 0.00393462 0.003
+0 0.00393462 -0.00300001
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "H"
+loc -0.0175 -0.0169565 0.00908614
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 0.00395652 -0.00300001
+0 0.00395652 0.00300001
+0 -0.00404348 0.00300001
+0 -0.00404348 -0.00300001
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.3
+2 0 0.2
+3 1 0.2
+SURF 0x0
+mat 1
+refs 3
+0 1 0.3
+1 0 0.3
+3 1 0.2
+kids 0
+OBJECT poly
+name "R"
+loc -0.0175 -0.0169924 0.00303184
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.00400762 -0.00300001
+0 -0.00400762 0.00300001
+0 0.00399239 0.00300001
+0 0.00399239 -0.00300001
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.3
+2 0 0.3
+0 1 0.2
+SURF 0x0
+mat 1
+refs 3
+2 0 0.3
+1 0 0.2
+0 1 0.2
+kids 0
+OBJECT poly
+name "U"
+loc -0.0175 -0.0169661 -0.00104752
+texture "transp-uvwxyz.rgb"
+crease 45.000000
+numvert 4
+0 -0.00403386 -0.00495549
+0 -0.00403386 0.00104453
+0 0.00396614 0.00104453
+0 0.00396614 -0.00495549
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 1
+2 0 1
+0 1 0.9
+SURF 0x0
+mat 1
+refs 3
+2 0 1
+1 0 0.9
+0 1 0.9
+kids 0
+OBJECT poly
+name "S"
+loc -0.0175 -0.0169566 -0.00907601
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 0.00395662 -0.00300002
+0 0.00395662 0.00300001
+0 -0.00404338 0.00300001
+0 -0.00404338 -0.00300002
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.2
+2 0 0.1
+3 1 0.1
+SURF 0x0
+mat 1
+refs 3
+0 1 0.2
+1 0 0.2
+3 1 0.1
+kids 0
+OBJECT poly
+name "T"
+loc -0.0175 -0.017 -0.0150925
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.004 -0.00300002
+0 -0.004 0.00300001
+0 0.004 0.00300001
+0 0.004 -0.00300002
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "V"
+loc -0.0175 -0.0269947 0.00758529
+texture "transp-uvwxyz.rgb"
+crease 45.000000
+numvert 4
+0 0.00399466 -0.00456439
+0 0.00399466 0.00143562
+0 -0.00400534 0.00143562
+0 -0.00400534 -0.00456439
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.9
+2 0 0.8
+3 1 0.8
+SURF 0x0
+mat 1
+refs 3
+0 1 0.9
+1 0 0.9
+3 1 0.8
+kids 0
+OBJECT poly
+name "I"
+loc -0.0175 -0.027 -1.02911e-05
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 -0.004 -0.00299999
+0 -0.004 0.00300002
+0 0.004 0.00300002
+0 0.004 -0.00299999
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.2
+2 0 0.2
+0 1 0.1
+SURF 0x0
+mat 1
+refs 3
+2 0 0.2
+1 0 0.1
+0 1 0.1
+kids 0
+OBJECT poly
+name "B"
+loc -0.0175 -0.0269712 -0.00445653
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 0.00397119 -0.00456438
+0 0.00397119 0.00143564
+0 -0.00402881 0.00143564
+0 -0.00402881 -0.00456438
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.9
+2 0 0.8
+3 1 0.8
+SURF 0x0
+mat 1
+refs 3
+0 1 0.9
+1 0 0.9
+3 1 0.8
+kids 0
+OBJECT poly
+name "P"
+loc -0.0175 -0.0518395 -0.0156781
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 0.0188395 -0.0107546
+0 0.0188395 -0.00475463
+0 0.0108395 -0.00475463
+0 0.0108395 -0.0107546
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.5
+2 0 0.4
+3 1 0.4
+SURF 0x0
+mat 1
+refs 3
+0 1 0.5
+1 0 0.5
+3 1 0.4
+kids 0
+OBJECT poly
+name "M"
+loc -0.0175 -0.0518569 -0.0088738
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 0.0108569 -0.0115368
+0 0.0108569 -0.00553682
+0 0.0188569 -0.00553682
+0 0.0188569 -0.0115368
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.8
+2 0 0.8
+0 1 0.7
+SURF 0x0
+mat 1
+refs 3
+2 0 0.8
+1 0 0.7
+0 1 0.7
+kids 0
+OBJECT poly
+name "E"
+loc -0.0175 -0.0518588 -0.00325571
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 0.0188589 -0.0111457
+0 0.0188589 -0.00514573
+0 0.0108588 -0.00514573
+0 0.0108588 -0.0111457
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.6
+2 0 0.5
+3 1 0.5
+SURF 0x0
+mat 1
+refs 3
+0 1 0.6
+1 0 0.6
+3 1 0.5
+kids 0
+OBJECT poly
+name "T"
+loc -0.0175 -0.0518332 0.00195337
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 0.0108332 -0.0103635
+0 0.0108332 -0.00436354
+0 0.0188332 -0.00436354
+0 0.0188332 -0.0103635
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "F"
+loc -0.0175 -0.0369391 0.0238238
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 0.00393911 -0.00339109
+0 0.00393911 0.00260891
+0 -0.00406089 0.00260891
+0 -0.00406089 -0.00339109
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.5
+2 0 0.4
+3 1 0.4
+SURF 0x0
+mat 1
+refs 3
+0 1 0.5
+1 0 0.5
+3 1 0.4
+kids 0
+OBJECT poly
+name "U"
+loc -0.0175 -0.0369446 0.0194479
+texture "transp-uvwxyz.rgb"
+crease 45.000000
+numvert 4
+0 -0.00405537 -0.00495548
+0 -0.00405537 0.00104453
+0 0.00394463 0.00104453
+0 0.00394463 -0.00495548
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 1
+2 0 1
+0 1 0.9
+SURF 0x0
+mat 1
+refs 3
+2 0 1
+1 0 0.9
+0 1 0.9
+kids 0
+OBJECT poly
+name "E"
+loc -0.0175 -0.037 0.0122921
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 -0.004 -0.0037822
+0 -0.004 0.00221781
+0 0.004 0.00221781
+0 0.004 -0.0037822
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.6
+2 0 0.6
+0 1 0.5
+SURF 0x0
+mat 1
+refs 3
+2 0 0.6
+1 0 0.5
+0 1 0.5
+kids 0
+OBJECT poly
+name "L"
+loc -0.0175 -0.036972 0.00708616
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.00402796 -0.0045644
+0 -0.00402796 0.00143562
+0 0.00397205 0.00143562
+0 0.00397205 -0.0045644
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.9
+2 0 0.9
+0 1 0.8
+SURF 0x0
+mat 1
+refs 3
+2 0 0.9
+1 0 0.8
+0 1 0.8
+kids 0
+OBJECT poly
+name "E"
+loc -0.0175 -0.0469905 0.00676506
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 -0.0040095 -0.0037822
+0 -0.0040095 0.00221782
+0 0.0039905 0.00221782
+0 0.0039905 -0.0037822
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.6
+2 0 0.6
+0 1 0.5
+SURF 0x0
+mat 1
+refs 3
+2 0 0.6
+1 0 0.5
+0 1 0.5
+kids 0
+OBJECT poly
+name "P"
+loc -0.0175 -0.047 0.000386076
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.004 -0.00339111
+0 -0.004 0.00260892
+0 0.004 0.00260892
+0 0.004 -0.00339111
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.5
+2 0 0.5
+0 1 0.4
+SURF 0x0
+mat 1
+refs 3
+2 0 0.5
+1 0 0.4
+0 1 0.4
+kids 0
+OBJECT poly
+name "R"
+loc -0.0175 -0.0469579 -0.00598286
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.00404206 -0.003
+0 -0.00404206 0.00300002
+0 0.00395794 0.00300002
+0 0.00395794 -0.003
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.3
+2 0 0.3
+0 1 0.2
+SURF 0x0
+mat 1
+refs 3
+2 0 0.3
+1 0 0.2
+0 1 0.2
+kids 0
+OBJECT poly
+name "C"
+loc -0.0175 -0.057 0.00723444
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 -0.004 -0.00417331
+0 -0.004 0.00182671
+0 0.004 0.00182671
+0 0.004 -0.00417331
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.8
+2 0 0.8
+0 1 0.7
+SURF 0x0
+mat 1
+refs 3
+2 0 0.8
+1 0 0.7
+0 1 0.7
+kids 0
+OBJECT poly
+name "D"
+loc -0.0175 -0.0569723 0.000760276
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 0.00397226 -0.00378218
+0 0.00397226 0.0022178
+0 -0.00402774 0.0022178
+0 -0.00402774 -0.00378218
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.7
+2 0 0.6
+3 1 0.6
+SURF 0x0
+mat 1
+refs 3
+0 1 0.7
+1 0 0.7
+3 1 0.6
+kids 0
+OBJECT poly
+name "P"
+loc -0.0175 -0.0569271 -0.00567004
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.00407292 -0.00339111
+0 -0.00407292 0.00260891
+0 0.00392708 0.00260891
+0 0.00392708 -0.00339111
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.5
+2 0 0.5
+0 1 0.4
+SURF 0x0
+mat 1
+refs 3
+2 0 0.5
+1 0 0.4
+0 1 0.4
+kids 0
+OBJECT poly
+name "P"
+loc -0.0175 -0.0669141 -0.00559302
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 0.0039141 -0.00339111
+0 0.0039141 0.00260891
+0 -0.0040859 0.00260891
+0 -0.0040859 -0.00339111
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.5
+2 0 0.4
+3 1 0.4
+SURF 0x0
+mat 1
+refs 3
+0 1 0.5
+1 0 0.5
+3 1 0.4
+kids 0
+OBJECT poly
+name "D"
+loc -0.0175 -0.0669593 0.00077902
+texture "transp-abcdefghij.rgb"
+crease 45.000000
+numvert 4
+0 -0.00404072 -0.00378218
+0 -0.00404072 0.0022178
+0 0.00395928 0.0022178
+0 0.00395928 -0.00378218
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.7
+2 0 0.7
+0 1 0.6
+SURF 0x0
+mat 1
+refs 3
+2 0 0.7
+1 0 0.6
+0 1 0.6
+kids 0
+OBJECT poly
+name "T"
+loc -0.0175 -0.067 0.00598412
+texture "transp-klmnopqrst.rgb"
+crease 45.000000
+numvert 4
+0 -0.00399999 -0.00300001
+0 -0.00399999 0.00300001
+0 0.004 0.00300001
+0 0.004 -0.00300001
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LInTempHundreds"
+loc -0.0175 0.0505912 0.0484802
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00159123 -0.00300001
+0 -0.00159123 0.00300001
+0 0.00640877 0.00300001
+0 0.00640877 -0.00300001
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LInTempTens"
+loc -0.0175 0.0505947 0.0424829
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00640525 -0.00300691
+0 0.00640525 0.00299732
+0 -0.00159475 0.00299732
+0 -0.00159475 -0.00300691
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LInTempOnes"
+loc -0.0175 0.0505947 0.036476
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00159474 -0.00300001
+0 -0.00159474 0.00300001
+0 0.00640526 0.00300001
+0 0.00640526 -0.00300001
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LN1Ones"
+loc -0.0175 0.0401053 0.0357439
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00689466 -0.00226793
+0 0.00689466 0.00373209
+0 -0.00110534 0.00373209
+0 -0.00110534 -0.00226793
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LN1Tens"
+loc -0.0175 0.0401053 0.0417508
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00110535 -0.00227483
+0 -0.00110535 0.0037294
+0 0.00689466 0.0037294
+0 0.00689466 -0.00227483
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LN1Hundreds"
+loc -0.0175 0.0401018 0.0477482
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00689817 -0.00226793
+0 0.00689817 0.00373209
+0 -0.00110183 0.00373209
+0 -0.00110183 -0.00226793
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LN2Hundreds"
+loc -0.0175 0.0305413 0.0478901
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00154129 -0.00240992
+0 -0.00154129 0.00359009
+0 0.0064587 0.00359009
+0 0.0064587 -0.00240992
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LN2Tens"
+loc -0.0175 0.0305448 0.0418928
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00645519 -0.00241683
+0 0.00645519 0.00358739
+0 -0.00154481 0.00358739
+0 -0.00154481 -0.00241683
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LN2Ones"
+loc -0.0175 0.0305448 0.0358859
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.0015448 -0.00240992
+0 -0.0015448 0.00359009
+0 0.00645519 0.00359009
+0 0.00645519 -0.00240992
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LEGTOnes"
+loc -0.0175 0.0205945 0.0354452
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00640548 -0.00196918
+0 0.00640548 0.00403083
+0 -0.00159452 0.00403083
+0 -0.00159452 -0.00196918
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LEGTTens"
+loc -0.0175 0.0205945 0.0414521
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00159452 -0.0019761
+0 -0.00159452 0.00402813
+0 0.00640548 0.00402813
+0 0.00640548 -0.0019761
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LEGTHundreds"
+loc -0.0175 0.020591 0.0474494
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00640899 -0.00196918
+0 0.00640899 0.00403083
+0 -0.00159101 0.00403083
+0 -0.00159101 -0.00196918
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LEGTThousands"
+loc -0.0175 0.0205945 0.0534673
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00159452 -0.00198708
+0 -0.00159452 0.00402107
+0 0.00640548 0.00402107
+0 0.00640548 -0.00198708
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LNozPosHundreds"
+loc -0.0175 0.00160275 0.0472198
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00260275 -0.00173954
+0 -0.00260275 0.00426047
+0 0.00539725 0.00426047
+0 0.00539725 -0.00173954
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LNozPosTens"
+loc -0.0175 0.00160626 0.0412225
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00539373 -0.00174645
+0 0.00539373 0.00425778
+0 -0.00260627 0.00425778
+0 -0.00260627 -0.00174645
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LNozPosOnes"
+loc -0.0175 0.00160626 0.0352155
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00260626 -0.00173954
+0 -0.00260626 0.00426047
+0 0.00539374 0.00426047
+0 0.00539374 -0.00173954
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LOilPressOnes"
+loc -0.0175 -0.00778649 0.0350708
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00478649 -0.00159484
+0 0.00478649 0.00440517
+0 -0.00321351 0.00440517
+0 -0.00321351 -0.00159484
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LOilPressTens"
+loc -0.0175 -0.00778648 0.0410778
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00321352 -0.00160176
+0 -0.00321352 0.00440247
+0 0.00478648 0.00440247
+0 0.00478648 -0.00160176
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LOilPressHundreds"
+loc -0.0175 -0.00779 0.0470751
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00479 -0.00159484
+0 0.00479 0.00440517
+0 -0.00321 0.00440517
+0 -0.00321 -0.00159484
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LThrustHundreds"
+loc -0.0175 -0.0181041 0.0470103
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00289587 -0.00153005
+0 -0.00289587 0.00446996
+0 0.00510413 0.00446996
+0 0.00510413 -0.00153005
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LThrustTens"
+loc -0.0175 -0.0181006 0.041013
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00510061 -0.00153697
+0 0.00510061 0.00446726
+0 -0.00289939 0.00446726
+0 -0.00289939 -0.00153697
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LThrustOnes"
+loc -0.0175 -0.0181006 0.035006
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00289938 -0.00153005
+0 -0.00289938 0.00446996
+0 0.00510062 0.00446996
+0 0.00510062 -0.00153005
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LFuelTempThousands"
+loc -0.0175 -0.0388885 0.0525701
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00588847 -0.0010899
+0 0.00588847 0.00491825
+0 -0.00211153 0.00491825
+0 -0.00211153 -0.0010899
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LFuelTempHundreds"
+loc -0.0175 -0.038892 0.0465522
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00210802 -0.001072
+0 -0.00210802 0.00492801
+0 0.00589198 0.00492801
+0 0.00589198 -0.001072
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LFuelTempTens"
+loc -0.0175 -0.0388885 0.0405549
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00588847 -0.00107892
+0 0.00588847 0.00492531
+0 -0.00211154 0.00492531
+0 -0.00211154 -0.00107892
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LFuelTempOnes"
+loc -0.0175 -0.0388885 0.034548
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00211153 -0.001072
+0 -0.00211153 0.00492801
+0 0.00588847 0.00492801
+0 0.00588847 -0.001072
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LFFOnes"
+loc -0.0175 0.0108614 0.0352155
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00613858 -0.00173954
+0 0.00613858 0.00426047
+0 -0.00186142 0.00426047
+0 -0.00186142 -0.00173954
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LFFTens"
+loc -0.0175 0.0108614 0.0412225
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00186143 -0.00174645
+0 -0.00186143 0.00425778
+0 0.00613858 0.00425778
+0 0.00613858 -0.00174645
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LFFHundreds"
+loc -0.0175 0.0108579 0.0472198
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00614209 -0.00173954
+0 0.00614209 0.00426047
+0 -0.00185791 0.00426047
+0 -0.00185791 -0.00173954
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LFFThousands"
+loc -0.0175 0.0108614 0.0532377
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00186142 -0.00175743
+0 -0.00186142 0.00425072
+0 0.00613858 0.00425072
+0 0.00613858 -0.00175743
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LFFTenthousands"
+loc -0.0175 0.0108271 0.0592279
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00617286 -0.00173954
+0 0.00617286 0.00426047
+0 -0.00182714 0.00426047
+0 -0.00182714 -0.00173954
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LCDPHundreds"
+loc -0.0175 -0.0574023 0.0474337
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.0035977 -0.00195345
+0 -0.0035977 0.00404656
+0 0.0044023 0.00404656
+0 0.0044023 -0.00195345
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LCDPTens"
+loc -0.0175 -0.0573988 0.0414364
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00439878 -0.00196037
+0 0.00439878 0.00404386
+0 -0.00360122 0.00404386
+0 -0.00360122 -0.00196037
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LCDPOnes"
+loc -0.0175 -0.0573988 0.0354294
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00360121 -0.00195345
+0 -0.00360121 0.00404656
+0 0.00439879 0.00404656
+0 0.00439879 -0.00195345
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "Dot"
+loc -0.0175 -0.0282914 0.0524709
+texture "transp-uvwxyz.rgb"
+crease 45.000000
+numvert 4
+0 0.00529142 -0.0129949
+0 0.00529142 -0.00699065
+0 -0.00270858 -0.00699065
+0 -0.00270858 -0.0129949
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.2
+2 0 0.1
+3 1 0.1
+SURF 0x0
+mat 1
+refs 3
+0 1 0.2
+1 0 0.2
+3 1 0.1
+kids 0
+OBJECT poly
+name "LVIBTenths"
+loc -0.0175 -0.0282924 0.0464866
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00529244 -0.0130106
+0 0.00529244 -0.00701059
+0 -0.00270756 -0.00701059
+0 -0.00270756 -0.0130106
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LVIBOnes"
+loc -0.0175 -0.028296 0.0584908
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00529595 -0.0130106
+0 0.00529595 -0.00701059
+0 -0.00270405 -0.00701059
+0 -0.00270405 -0.0130106
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LEPROnes"
+loc -0.0175 -0.0480192 0.0584908
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00298085 -0.0130106
+0 -0.00298085 -0.00701059
+0 0.00501915 -0.00701059
+0 0.00501915 -0.0130106
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "LEPRTenths"
+loc -0.0175 -0.0480156 0.0464866
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00298437 -0.0130106
+0 -0.00298437 -0.00701059
+0 0.00501563 -0.00701059
+0 0.00501563 -0.0130106
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "Dot"
+loc -0.0175 -0.0480146 0.0524709
+texture "transp-uvwxyz.rgb"
+crease 45.000000
+numvert 4
+0 -0.00298538 -0.0129949
+0 -0.00298538 -0.00699065
+0 0.00501462 -0.00699065
+0 0.00501462 -0.0129949
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.2
+2 0 0.2
+0 1 0.1
+SURF 0x0
+mat 1
+refs 3
+2 0 0.2
+1 0 0.1
+0 1 0.1
+kids 0
+OBJECT poly
+name "Dot"
+loc -0.0175 -0.0688542 0.0520987
+texture "transp-uvwxyz.rgb"
+crease 45.000000
+numvert 4
+0 0.00585423 -0.0126227
+0 0.00585423 -0.00661851
+0 -0.00214576 -0.00661851
+0 -0.00214576 -0.0126227
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.2
+2 0 0.1
+3 1 0.1
+SURF 0x0
+mat 1
+refs 3
+0 1 0.2
+1 0 0.2
+3 1 0.1
+kids 0
+OBJECT poly
+name "LTDPTenths"
+loc -0.0175 -0.0688552 0.0461144
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00585525 -0.0126385
+0 0.00585525 -0.00663844
+0 -0.00214475 -0.00663844
+0 -0.00214475 -0.0126385
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "LTDPOnes"
+loc -0.0175 -0.0688588 0.0581187
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00585876 -0.0126385
+0 0.00585876 -0.00663845
+0 -0.00214123 -0.00663845
+0 -0.00214123 -0.0126385
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "RTDPOnes"
+loc -0.0175 -0.0688588 -0.0388457
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00214123 -0.0126385
+0 -0.00214123 -0.00663846
+0 0.00585876 -0.00663846
+0 0.00585876 -0.0126385
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "RTDPTenths"
+loc -0.0175 -0.0688552 -0.0508499
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00214475 -0.0126385
+0 -0.00214475 -0.00663845
+0 0.00585525 -0.00663845
+0 0.00585525 -0.0126385
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "Dot"
+loc -0.0175 -0.0688542 -0.0448656
+texture "transp-uvwxyz.rgb"
+crease 45.000000
+numvert 4
+0 -0.00214576 -0.0126228
+0 -0.00214576 -0.00661852
+0 0.00585423 -0.00661852
+0 0.00585423 -0.0126228
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.2
+2 0 0.2
+0 1 0.1
+SURF 0x0
+mat 1
+refs 3
+2 0 0.2
+1 0 0.1
+0 1 0.1
+kids 0
+OBJECT poly
+name "Dot"
+loc -0.0175 -0.0480146 -0.0444935
+texture "transp-uvwxyz.rgb"
+crease 45.000000
+numvert 4
+0 0.00501462 -0.0129949
+0 0.00501462 -0.00699066
+0 -0.00298538 -0.00699066
+0 -0.00298538 -0.0129949
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.2
+2 0 0.1
+3 1 0.1
+SURF 0x0
+mat 1
+refs 3
+0 1 0.2
+1 0 0.2
+3 1 0.1
+kids 0
+OBJECT poly
+name "REPRTenths"
+loc -0.0175 -0.0480156 -0.0504778
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00501563 -0.0130106
+0 0.00501563 -0.00701059
+0 -0.00298437 -0.00701059
+0 -0.00298437 -0.0130106
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "REPROnes"
+loc -0.0175 -0.0480192 -0.0384735
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00501915 -0.0130106
+0 0.00501915 -0.00701059
+0 -0.00298085 -0.00701059
+0 -0.00298085 -0.0130106
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "RVIBOnes"
+loc -0.0175 -0.028296 -0.0384735
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00270405 -0.0130106
+0 -0.00270405 -0.00701059
+0 0.00529595 -0.00701059
+0 0.00529595 -0.0130106
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "RVIBTenths"
+loc -0.0175 -0.0282924 -0.0504778
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00270756 -0.0130106
+0 -0.00270756 -0.00701059
+0 0.00529244 -0.00701059
+0 0.00529244 -0.0130106
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "Dot"
+loc -0.0175 -0.0282914 -0.0444935
+texture "transp-uvwxyz.rgb"
+crease 45.000000
+numvert 4
+0 -0.00270858 -0.0129949
+0 -0.00270858 -0.00699066
+0 0.00529142 -0.00699066
+0 0.00529142 -0.0129949
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.2
+2 0 0.2
+0 1 0.1
+SURF 0x0
+mat 1
+refs 3
+2 0 0.2
+1 0 0.1
+0 1 0.1
+kids 0
+OBJECT poly
+name "RCDPOnes"
+loc -0.0175 -0.0573988 -0.0615349
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00439879 -0.00195345
+0 0.00439879 0.00404657
+0 -0.00360122 0.00404657
+0 -0.00360122 -0.00195345
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "RCDPTens"
+loc -0.0175 -0.0573988 -0.055528
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00360122 -0.00196037
+0 -0.00360122 0.00404386
+0 0.00439878 0.00404386
+0 0.00439878 -0.00196037
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "RCDPHundreds"
+loc -0.0175 -0.0574023 -0.0495307
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.0044023 -0.00195345
+0 0.0044023 0.00404656
+0 -0.00359771 0.00404656
+0 -0.00359771 -0.00195345
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "RFFTenthousands"
+loc -0.0175 0.0108271 -0.0377364
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00182714 -0.00173955
+0 -0.00182714 0.00426047
+0 0.00617287 0.00426047
+0 0.00617287 -0.00173955
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "RFFThousands"
+loc -0.0175 0.0108614 -0.0437267
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00613859 -0.00175743
+0 0.00613859 0.00425072
+0 -0.00186142 0.00425072
+0 -0.00186142 -0.00175743
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "RFFHundreds"
+loc -0.0175 0.0108579 -0.0497446
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00185791 -0.00173954
+0 -0.00185791 0.00426047
+0 0.0061421 0.00426047
+0 0.0061421 -0.00173954
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "RFFTens"
+loc -0.0175 0.0108614 -0.0557419
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00613858 -0.00174645
+0 0.00613858 0.00425778
+0 -0.00186143 0.00425778
+0 -0.00186143 -0.00174645
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "RFFOnes"
+loc -0.0175 0.0108614 -0.0617489
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00186142 -0.00173954
+0 -0.00186142 0.00426047
+0 0.00613859 0.00426047
+0 0.00613859 -0.00173954
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "RFuelTempOnes"
+loc -0.0175 -0.0388885 -0.0624164
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00588847 -0.001072
+0 0.00588847 0.00492802
+0 -0.00211153 0.00492802
+0 -0.00211153 -0.001072
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "RFuelTempTens"
+loc -0.0175 -0.0388885 -0.0564095
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00211154 -0.00107892
+0 -0.00211154 0.00492531
+0 0.00588847 0.00492531
+0 0.00588847 -0.00107892
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "RFuelTempHundreds"
+loc -0.0175 -0.038892 -0.0504121
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00589198 -0.001072
+0 0.00589198 0.00492801
+0 -0.00210802 0.00492801
+0 -0.00210802 -0.001072
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "RFuelTempThousands"
+loc -0.0175 -0.0388885 -0.0443942
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00211153 -0.0010899
+0 -0.00211153 0.00491825
+0 0.00588847 0.00491825
+0 0.00588847 -0.0010899
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "RThrustOnes"
+loc -0.0175 -0.0181006 -0.0619584
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00510062 -0.00153004
+0 0.00510062 0.00446997
+0 -0.00289938 0.00446997
+0 -0.00289938 -0.00153004
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "RThrustTens"
+loc -0.0175 -0.0181006 -0.0559514
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00289939 -0.00153697
+0 -0.00289939 0.00446726
+0 0.00510061 0.00446726
+0 0.00510061 -0.00153697
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "RThrustHundreds"
+loc -0.0175 -0.0181041 -0.0499541
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00510413 -0.00153005
+0 0.00510413 0.00446996
+0 -0.00289587 0.00446996
+0 -0.00289587 -0.00153005
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "ROilPressHundreds"
+loc -0.0175 -0.00779 -0.0498893
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00321 -0.00159484
+0 -0.00321 0.00440518
+0 0.00479 0.00440518
+0 0.00479 -0.00159484
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "ROilPressTens"
+loc -0.0175 -0.00778649 -0.0558866
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00478648 -0.00160176
+0 0.00478648 0.00440247
+0 -0.00321352 0.00440247
+0 -0.00321352 -0.00160176
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "ROilPressOnes"
+loc -0.0175 -0.00778649 -0.0618936
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00321351 -0.00159483
+0 -0.00321351 0.00440518
+0 0.00478649 0.00440518
+0 0.00478649 -0.00159483
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "RNozPosOnes"
+loc -0.0175 0.00160625 -0.0617489
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00539374 -0.00173954
+0 0.00539374 0.00426047
+0 -0.00260626 0.00426047
+0 -0.00260626 -0.00173954
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "RNozPosTens"
+loc -0.0175 0.00160626 -0.0557419
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00260627 -0.00174645
+0 -0.00260627 0.00425778
+0 0.00539373 0.00425778
+0 0.00539373 -0.00174645
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "RNozPosHundreds"
+loc -0.0175 0.00160274 -0.0497446
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00539725 -0.00173954
+0 0.00539725 0.00426047
+0 -0.00260275 0.00426047
+0 -0.00260275 -0.00173954
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "REGTThousands"
+loc -0.0175 0.0205945 -0.0434971
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00640548 -0.00198708
+0 0.00640548 0.00402107
+0 -0.00159452 0.00402107
+0 -0.00159452 -0.00198708
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "REGTHundreds"
+loc -0.0175 0.020591 -0.049515
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00159101 -0.00196918
+0 -0.00159101 0.00403083
+0 0.00640899 0.00403083
+0 0.00640899 -0.00196918
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "REGTTens"
+loc -0.0175 0.0205945 -0.0555123
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00640548 -0.0019761
+0 0.00640548 0.00402813
+0 -0.00159452 0.00402813
+0 -0.00159452 -0.0019761
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "REGTOnes"
+loc -0.0175 0.0205945 -0.0615192
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00159452 -0.00196918
+0 -0.00159452 0.00403083
+0 0.00640548 0.00403083
+0 0.00640548 -0.00196918
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "RN2Ones"
+loc -0.0175 0.0305448 -0.0610785
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00645519 -0.00240991
+0 0.00645519 0.0035901
+0 -0.0015448 0.0035901
+0 -0.0015448 -0.00240991
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "RN2Tens"
+loc -0.0175 0.0305448 -0.0550715
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00154481 -0.00241683
+0 -0.00154481 0.00358739
+0 0.00645519 0.00358739
+0 0.00645519 -0.00241683
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "RN2Hundreds"
+loc -0.0175 0.0305413 -0.0490742
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.0064587 -0.00240992
+0 0.0064587 0.00359009
+0 -0.00154129 0.00359009
+0 -0.00154129 -0.00240992
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "RN1Hundreds"
+loc -0.0175 0.0401018 -0.0492162
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00110183 -0.00226793
+0 -0.00110183 0.00373209
+0 0.00689817 0.00373209
+0 0.00689817 -0.00226793
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "RN1Tens"
+loc -0.0175 0.0401053 -0.0552135
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00689466 -0.00227483
+0 0.00689466 0.0037294
+0 -0.00110535 0.0037294
+0 -0.00110535 -0.00227483
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "RN1Ones"
+loc -0.0175 0.0401053 -0.0612205
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00110534 -0.00226792
+0 -0.00110534 0.00373209
+0 0.00689466 0.00373209
+0 0.00689466 -0.00226792
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "RInTempOnes"
+loc -0.0175 0.0505947 -0.0604884
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00640526 -0.00300001
+0 0.00640526 0.00300001
+0 -0.00159474 0.00300001
+0 -0.00159474 -0.00300001
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0
+OBJECT poly
+name "RInTempTens"
+loc -0.0175 0.0505947 -0.0544815
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 -0.00159475 -0.00300691
+0 -0.00159475 0.00299732
+0 0.00640525 0.00299732
+0 0.00640525 -0.00300691
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+3 1 0.1
+2 0 0.1
+0 1 0
+SURF 0x0
+mat 1
+refs 3
+2 0 0.1
+1 0 0
+0 1 0
+kids 0
+OBJECT poly
+name "RInTempHundreds"
+loc -0.0175 0.0505912 -0.0484841
+texture "transp-digits.rgb"
+crease 45.000000
+numvert 4
+0 0.00640877 -0.00300001
+0 0.00640877 0.00300001
+0 -0.00159123 0.00300001
+0 -0.00159123 -0.00300001
+numsurf 2
+SURF 0x0
+mat 1
+refs 3
+1 0 0.1
+2 0 0
+3 1 0
+SURF 0x0
+mat 1
+refs 3
+0 1 0.1
+1 0 0.1
+3 1 0
+kids 0

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <panel>
+  <name>Radar DDI</name>
+  <path>Aircraft/FA-18/Panels/Right-DDI.xml</path>
+  <bottom-left>
+   <x-m> 0.0</x-m>
+   <y-m>-0.005</y-m>
+   <z-m>-0.0047</z-m>
+  </bottom-left>
+  <bottom-right>
+   <x-m> 0.0</x-m>
+   <y-m> 0.1375</y-m>
+   <z-m>-0.0047</z-m>
+  </bottom-right>
+  <top-left>
+   <x-m> 0.0</x-m>
+   <y-m>-0.005</y-m>
+   <z-m> 0.139</z-m>
+  </top-left>
+ </panel>
+
+</PropertyList>

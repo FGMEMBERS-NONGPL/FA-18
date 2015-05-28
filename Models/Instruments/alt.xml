@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>alt.ac</path>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Needle</object-name>
+  <property>instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>0.36</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>Tens</object-name>
+  <property>instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>0.01</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>Hundreds</object-name>
+  <property>instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>0.001</factor>
+  <step>100</step>
+  <scroll>20</scroll>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>Thousands</object-name>
+  <property>instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>0.0001</factor>
+  <step>1000</step>
+  <scroll>20</scroll>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>TenThousands</object-name>
+  <property>instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>0.00001</factor>
+  <step>10000</step>
+  <scroll>20</scroll>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>PressureThousands</object-name>
+  <property>instrumentation/altimeter/setting-inhg</property>
+  <factor>10.0</factor>
+  <step>0.01</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>PressureHundreds</object-name>
+  <property>instrumentation/altimeter/setting-inhg</property>
+  <factor>1.0</factor>
+  <step>0.1</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>PressureTens</object-name>
+  <property>instrumentation/altimeter/setting-inhg</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>PressureOnes</object-name>
+  <property>instrumentation/altimeter/setting-inhg</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>

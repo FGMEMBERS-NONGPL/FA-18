@@ -1,0 +1,300 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<!--  <model> -->
+<!--   <path>Aircraft/FA-18/Models/Instruments/frame.xml</path> -->
+<!--   <offsets> -->
+<!--    <x-m>4.843</x-m> -->
+<!--    <z-m>1.305</z-m> -->
+<!--   </offsets> -->
+<!--  </model> -->
+
+ <!-- Instrument panel -->
+ <model>
+  <path>Aircraft/FA-18/Models/Instruments/aoa-indexer.xml</path>
+  <offsets>
+   <x-m>4.268</x-m>
+   <y-m>-0.11917</y-m>
+   <z-m>1.2501</z-m>
+   <pitch-deg>-14.0</pitch-deg>
+  </offsets>
+ </model>
+ <!-- FIXME move the hud up ... -->
+ <!-- The HUD overlay -->
+ <model>
+  <path>Aircraft/FA-18/Models/Instruments/hud-overlay.xml</path>
+  <offsets>
+   <x-m>4.2336</x-m>
+   <y-m>0</y-m>
+   <z-m>1.2844</z-m>
+   <pitch-deg>30.25</pitch-deg>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/FA-18/Models/Instruments/radio.xml</path>
+  <offsets>
+   <x-m>4.313</x-m>
+   <y-m>0.0</y-m>
+   <z-m>1.105</z-m>
+   <pitch-deg>-2.0</pitch-deg>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/FA-18/Models/Instruments/right-ddi.xml</path>
+  <offsets>
+   <x-m>4.3168</x-m>
+   <y-m>0.20091</y-m>
+   <z-m>1.0575</z-m>
+   <pitch-deg>-9.0</pitch-deg>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/FA-18/Models/Instruments/left-ddi.xml</path>
+  <offsets>
+   <x-m>4.3168</x-m>
+   <y-m>-0.20091</y-m>
+   <z-m>1.0575</z-m>
+   <pitch-deg>-9.0</pitch-deg>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/FA-18/Models/Instruments/ddi-engines.xml</path>
+  <offsets>
+   <x-m>4.3168</x-m>
+   <y-m>-0.20091</y-m>
+   <z-m>1.0575</z-m>
+   <pitch-deg>-9.0</pitch-deg>
+  </offsets>
+ </model>
+<!--  <model> -->
+<!--   <path>Aircraft/FA-18/Models/Instruments/ddi-radar.xml</path> -->
+<!--   <offsets> -->
+<!--    <x-m>4.3168</x-m> -->
+<!--    <y-m>0.20091</y-m> -->
+<!--    <z-m>1.0575</z-m> -->
+<!--    <pitch-deg>-9.0</pitch-deg> -->
+<!--   </offsets> -->
+<!--  </model> -->
+ <model>
+  <path>Aircraft/FA-18/Models/Instruments/right-lights.xml</path>
+  <offsets>
+   <x-m>4.2968</x-m>
+   <y-m>0.172</y-m>
+   <z-m>1.1570</z-m>
+   <pitch-deg>-9.0</pitch-deg>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/FA-18/Models/Instruments/left-lights.xml</path>
+  <offsets>
+   <x-m>4.2968</x-m>
+   <y-m>-0.172</y-m>
+   <z-m>1.1570</z-m>
+   <pitch-deg>-9.0</pitch-deg>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/FA-18/Models/Instruments/left-box.xml</path>
+  <offsets>
+   <x-m>4.3130</x-m>
+   <y-m>-0.32</y-m>
+   <z-m>1.015</z-m>
+   <pitch-deg>-9.0</pitch-deg>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/FA-18/Models/Instruments/right-box.xml</path>
+  <offsets>
+   <x-m>4.3130</x-m>
+   <y-m>0.32</y-m>
+   <z-m>1.015</z-m>
+   <pitch-deg>-9.0</pitch-deg>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/FA-18/Models/Instruments/map.xml</path>
+  <offsets>
+   <x-m>4.3565</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.85494</z-m>
+   <pitch-deg>-24.0</pitch-deg>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/FA-18/Models/Instruments/map-compass.xml</path>
+  <offsets>
+   <x-m>4.3565</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.85494</z-m>
+   <pitch-deg>-24.0</pitch-deg>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/FA-18/Models/Instruments/hud-control.xml</path>
+  <offsets>
+   <x-m>4.3210</x-m>
+   <y-m>0</y-m>
+   <z-m>0.98645</z-m>
+   <pitch-deg>-9.0</pitch-deg>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/FA-18/Models/Instruments/fa-18-ai.xml</path>
+  <offsets>
+   <x-m>4.2930</x-m>
+   <y-m>0.14</y-m>
+   <z-m>0.91199</z-m>
+   <pitch-deg>-9.0</pitch-deg>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/FA-18/Models/Instruments/speed.xml</path>
+  <offsets>
+   <x-m>4.323</x-m>
+   <y-m>0.135</y-m>
+   <z-m>0.83199</z-m>
+   <pitch-deg>-9.0</pitch-deg>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/FA-18/Models/Instruments/alt.xml</path>
+  <offsets>
+   <x-m>4.323</x-m>
+   <y-m>0.21</y-m>
+   <z-m>0.83199</z-m>
+   <pitch-deg>-9.0</pitch-deg>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/FA-18/Models/Instruments/climb.xml</path>
+  <offsets>
+   <x-m>4.323</x-m>
+   <y-m>0.285</y-m>
+   <z-m>0.83199</z-m>
+   <pitch-deg>-9.0</pitch-deg>
+  </offsets>
+ </model>
+ <model>
+  <path>Aircraft/FA-18/Models/Instruments/jettison-gear.xml</path>
+  <offsets>
+   <x-m>4.343</x-m>
+   <y-m>-0.28</y-m>
+   <z-m>0.89199</z-m>
+   <pitch-deg>-9.0</pitch-deg>
+  </offsets>
+ </model>
+
+<model>
+<path>Aircraft/FA-18/Models/Interior/Radar/radar.xml</path>
+    <offsets>
+   <x-m>4.2730</x-m>
+   <y-m>0.23</y-m>
+   <z-m>0.90299</z-m>
+   <pitch-deg>-9.0</pitch-deg>
+    </offsets>
+  </model>
+
+<model>
+<path>Aircraft/FA-18/Models/Interior/Radio/an-arc-159v1.xml</path>
+    <offsets>
+   <x-m>4.2930</x-m>
+   <y-m>-0.18</y-m>
+   <z-m>0.86299</z-m>
+   <pitch-deg>81.0</pitch-deg>
+    </offsets>
+  </model>
+
+<model>
+<path>Aircraft/FA-18/Models/Interior/Smoke/smoke_switch.xml</path>
+    <offsets>
+   <x-m>4.3765</x-m>
+   <y-m>-0.13</y-m>
+   <z-m>0.63494</z-m>
+   <pitch-deg>-24.0</pitch-deg>
+    </offsets>
+  </model>
+
+<model>
+<path>Aircraft/FA-18/Models/Interior/Tacan/tacan.xml</path>
+    <offsets>
+   <x-m>4.3565</x-m>
+   <y-m>0.34</y-m>
+   <z-m>0.77594</z-m>
+   <pitch-deg>22</pitch-deg>
+    </offsets>
+  </model>
+
+<model>
+<path>Aircraft/FA-18/Models/Interior/Throttle/throttles.xml</path>
+    <offsets>
+   <x-m>4.65</x-m>
+   <y-m>-0.36</y-m>
+   <z-m>0.745</z-m>
+   <pitch-deg>12</pitch-deg>
+    </offsets>
+  </model>
+
+<model>
+<path>Aircraft/FA-18/Models/Interior/ecm/ecm.xml</path>
+    <offsets>
+   <x-m>4.3705</x-m>
+   <y-m>-0.345</y-m>
+   <z-m>0.77594</z-m>
+   <pitch-deg>22</pitch-deg>
+    </offsets>
+  </model>
+
+<model>
+<path>Aircraft/FA-18/Models/Interior/afcs/afcs.xml</path>
+    <offsets>
+   <x-m>4.4705</x-m>
+   <y-m>-0.345</y-m>
+   <z-m>0.73594</z-m>
+   <pitch-deg>22</pitch-deg>
+    </offsets>
+  </model>
+
+
+<model>
+<path>Aircraft/FA-18/Models/Interior/Radio/an-arc-182v.xml</path>
+    <offsets>
+   <x-m>4.43505</x-m>
+   <y-m>0.34</y-m>
+   <z-m>0.76594</z-m>
+   <pitch-deg>22</pitch-deg>
+    </offsets>
+  </model>
+
+<model>
+<path>Aircraft/FA-18/Models/Interior/Radio/A-10-an-arc-186-1.xml</path>
+    <offsets>
+   <x-m>4.4905</x-m>
+   <y-m>0.34</y-m>
+   <z-m>0.74094</z-m>
+   <pitch-deg>22</pitch-deg>
+    </offsets>
+  </model>
+
+<model>
+<path>Aircraft/FA-18/Models/Interior/Gear/ldg-controls.xml</path>
+    <offsets>
+   <x-m>4.3070</x-m>
+   <y-m>-0.36</y-m>
+   <z-m>0.86</z-m>
+   <pitch-deg>-9.0</pitch-deg>
+    </offsets>
+  </model>
+
+<model>
+<path>Aircraft/FA-18/Models/Interior/Pedals/pedals.xml</path>
+    <offsets>
+   <x-m>4.2</x-m>
+   <y-m>0</y-m>
+   <z-m>0.45</z-m>
+   <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+
+</PropertyList>

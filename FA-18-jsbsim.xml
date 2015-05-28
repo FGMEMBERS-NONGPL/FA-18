@@ -1,0 +1,2960 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="http://jsbsim.sourceforge.net/JSBSim.xsl"?>
+<fdm_config name="F/A-18" version="2.0" release="BETA"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
+<!--
+  File:     FA-18.xml
+  Author:   Mathias Froehlich <Mathias.Froehlich@web.de>
+
+  http://www.dfrc.nasa.gov/Research/HARV/Work/NASA2/nasa2.html
+  H-2424.pdf
+  H-2252.pdf
+  NASA-95-tp3531.pdf
+  http://techreports.larc.nasa.gov/ltrs/PDF/1998/tp/NASA-98-tp208465.pdf
+  http://www.dfrc.nasa.gov/Research/HARV/VDD/
+  http://techreports.larc.nasa.gov/ltrs/PDF/1997/cr/NASA-97-cr201687.pdf
+
+  NOTE: The reference point differs from the 3D-models origin. Here the
+        the reference frame is taken with the nose tip as its origin.
+        I have found later, that the reference frame in at least the H-2424
+        paper has a positive x value of 59.82in at the nose tip and a waterline
+        value of 94.60in at the nose tip.
+
+-->
+
+   <fileheader>
+      <author>Mathias Froehlich</author>
+      <description>Boeing F/A-18</description>
+   </fileheader>
+
+   <metrics>
+      <wingarea unit="FT2">400</wingarea>
+      <wingspan unit="FT">37.42</wingspan>
+      <chord unit="FT">11.52</chord>
+      <!-- offset to the center of gravity of the harv matlab file
+           xref=.017*cbar=0.017*11.52, zref = -.449 -->
+      <location name="AERORP" unit="IN">
+        <x>458.56</x>
+        <y>0</y>
+        <z>100</z>
+      </location>
+      <location name="EYEPOINT" unit="IN">
+         <x>258.72</x>
+         <y>0</y>
+         <z>154.5</z>
+      </location>
+      <location name="VRP" unit="IN">
+         <x>395.89</x>
+         <y>0</y>
+         <z>100</z>
+      </location>
+   </metrics>
+
+   <mass_balance>
+      <ixx unit="SLUG*FT2">16179</ixx>
+      <iyy unit="SLUG*FT2">119353</iyy>
+      <izz unit="SLUG*FT2">131500</izz>
+      <ixy unit="SLUG*FT2">0</ixy>
+      <ixz unit="SLUG*FT2">-2120</ixz>
+      <iyz unit="SLUG*FT2">0</iyz>
+      <!--
+         H-2424 gives 31167 with 66% fuel.
+         H-2252 gives a weigth of 6480lb fuel will be 60%
+         ... this yields to an emptyweight of:
+       -->
+      <emptywt unit="LBS">25039</emptywt>
+      <!-- Center of gravity, is at
+           10.046m 0.22479m 0m in the coordinate system of the 3D Model -->
+      <location name="CG" unit="IN">
+         <x>455.32</x>
+         <y>0</y>
+         <z>103.45</z>
+      </location>
+   </mass_balance>
+
+   <ground_reactions>
+      <contact type="BOGEY" name="NOSE_LG">
+         <location unit="IN">
+            <x>281.3</x>
+            <y>0</y>
+            <z>24.1</z>
+         </location>
+         <static_friction>0.5</static_friction>
+         <dynamic_friction>0.8</dynamic_friction>
+         <rolling_friction>0.02</rolling_friction>
+         <spring_coeff unit="LBS/FT">15000</spring_coeff>
+         <damping_coeff unit="LBS/FT/SEC">8000</damping_coeff>
+         <max_steer unit="DEG">80</max_steer>
+         <brake_group>NONE</brake_group>
+         <retractable>1</retractable>
+      </contact>
+      <contact type="BOGEY" name="NOSE_LGL">
+         <location unit="IN">
+            <x>281.3</x>
+            <y>0</y>
+            <z>34.1</z>
+         </location>
+         <static_friction>0.5</static_friction>
+         <dynamic_friction>0.8</dynamic_friction>
+         <rolling_friction>0.02</rolling_friction>
+         <spring_coeff unit="LBS/FT">80000</spring_coeff>
+         <damping_coeff unit="LBS/FT/SEC">60000</damping_coeff>
+         <max_steer unit="DEG">80</max_steer>
+         <brake_group>NONE</brake_group>
+         <retractable>1</retractable>
+      </contact>
+      <contact type="BOGEY" name="LEFT_MLG">
+         <location unit="IN">
+            <x>475.8</x>
+            <y>-61.4</y>
+            <z>19</z>
+         </location>
+         <static_friction>0.5</static_friction>
+         <dynamic_friction>0.8</dynamic_friction>
+         <rolling_friction>0.02</rolling_friction>
+         <spring_coeff unit="LBS/FT">25000</spring_coeff>
+         <damping_coeff unit="LBS/FT/SEC">4000</damping_coeff>
+         <max_steer unit="DEG">0</max_steer>
+         <brake_group>LEFT</brake_group>
+         <retractable>1</retractable>
+      </contact>
+      <contact type="BOGEY" name="RIGHT_MLG">
+         <location unit="IN">
+            <x>475.8</x>
+            <y>61.4</y>
+            <z>19</z>
+         </location>
+         <static_friction>0.5</static_friction>
+         <dynamic_friction>0.8</dynamic_friction>
+         <rolling_friction>0.02</rolling_friction>
+         <spring_coeff unit="LBS/FT">25000</spring_coeff>
+         <damping_coeff unit="LBS/FT/SEC">4000</damping_coeff>
+         <max_steer unit="DEG">0</max_steer>
+         <brake_group>RIGHT</brake_group>
+         <retractable>1</retractable>
+      </contact>
+
+      <!-- Fake 'gears' to model the plane itself -->
+      <contact type="STRUCTURE" name="TIP">
+         <location unit="IN">
+            <x>59.82</x>
+            <y>0</y>
+            <z>94.6</z>
+         </location>
+         <static_friction>0.2</static_friction>
+         <dynamic_friction>0.2</dynamic_friction>
+         <spring_coeff unit="LBS/FT">500000</spring_coeff>
+         <damping_coeff unit="LBS/FT/SEC">20000</damping_coeff>
+      </contact>
+      <contact type="STRUCTURE" name="TIPBOTTOM">
+         <location unit="IN">
+            <x>136.9</x>
+            <y>0</y>
+            <z>83.1</z>
+         </location>
+         <static_friction>0.2</static_friction>
+         <dynamic_friction>0.2</dynamic_friction>
+         <spring_coeff unit="LBS/FT">500000</spring_coeff>
+         <damping_coeff unit="LBS/FT/SEC">20000</damping_coeff>
+      </contact>
+      <contact type="STRUCTURE" name="STAB_L">
+         <location unit="IN">
+            <x>608.2</x>
+            <y>-71.0</y>
+            <z>208.8</z>
+         </location>
+         <static_friction>0.2</static_friction>
+         <dynamic_friction>0.2</dynamic_friction>
+         <spring_coeff unit="LBS/FT">500000</spring_coeff>
+         <damping_coeff unit="LBS/FT/SEC">20000</damping_coeff>
+      </contact>
+      <contact type="STRUCTURE" name="STAB_R">
+         <location unit="IN">
+            <x>608.2</x>
+            <y>71.0</y>
+            <z>208.8</z>
+         </location>
+         <static_friction>0.2</static_friction>
+         <dynamic_friction>0.2</dynamic_friction>
+         <spring_coeff unit="LBS/FT">500000</spring_coeff>
+         <damping_coeff unit="LBS/FT/SEC">20000</damping_coeff>
+      </contact>
+      <contact type="STRUCTURE" name="STAB_BL">
+         <location unit="IN">
+            <x>652.7</x>
+            <y>-71.0</y>
+            <z>208.8</z>
+         </location>
+         <static_friction>0.2</static_friction>
+         <dynamic_friction>0.2</dynamic_friction>
+         <spring_coeff unit="LBS/FT">500000</spring_coeff>
+         <damping_coeff unit="LBS/FT/SEC">20000</damping_coeff>
+      </contact>
+      <contact type="STRUCTURE" name="STAB_BR">
+         <location unit="IN">
+            <x>652.7</x>
+            <y>71.0</y>
+            <z>208.8</z>
+         </location>
+         <static_friction>0.2</static_friction>
+         <dynamic_friction>0.2</dynamic_friction>
+         <spring_coeff unit="LBS/FT">500000</spring_coeff>
+         <damping_coeff unit="LBS/FT/SEC">20000</damping_coeff>
+      </contact>
+      <contact type="STRUCTURE" name="ELEV_L">
+         <location unit="IN">
+            <x>726.6</x>
+            <y>-128.1</y>
+            <z>101.6</z>
+         </location>
+         <static_friction>0.2</static_friction>
+         <dynamic_friction>0.2</dynamic_friction>
+         <spring_coeff unit="LBS/FT">500000</spring_coeff>
+         <damping_coeff unit="LBS/FT/SEC">20000</damping_coeff>
+      </contact>
+      <contact type="STRUCTURE" name="ELEV_R">
+         <location unit="IN">
+            <x>726.6</x>
+            <y>128.1</y>
+            <z>101.6</z>
+         </location>
+         <static_friction>0.2</static_friction>
+         <dynamic_friction>0.2</dynamic_friction>
+         <spring_coeff unit="LBS/FT">500000</spring_coeff>
+         <damping_coeff unit="LBS/FT/SEC">20000</damping_coeff>
+      </contact>
+      <contact type="STRUCTURE" name="INTAKE_L">
+         <location unit="IN">
+            <x>418.6</x>
+            <y>-24.0</y>
+            <z>70.9</z>
+         </location>
+         <static_friction>0.2</static_friction>
+         <dynamic_friction>0.2</dynamic_friction>
+         <spring_coeff unit="LBS/FT">500000</spring_coeff>
+         <damping_coeff unit="LBS/FT/SEC">20000</damping_coeff>
+      </contact>
+      <contact type="STRUCTURE" name="INTAKE_R">
+         <location unit="IN">
+            <x>418.6</x>
+            <y>24.0</y>
+            <z>70.9</z>
+         </location>
+         <static_friction>0.2</static_friction>
+         <dynamic_friction>0.2</dynamic_friction>
+         <spring_coeff unit="LBS/FT">500000</spring_coeff>
+         <damping_coeff unit="LBS/FT/SEC">20000</damping_coeff>
+      </contact>
+      <contact type="STRUCTURE" name="BOTTOM_L">
+         <location unit="IN">
+            <x>569.6</x>
+            <y>-24.0</y>
+            <z>70.9</z>
+         </location>
+         <static_friction>0.2</static_friction>
+         <dynamic_friction>0.2</dynamic_friction>
+         <spring_coeff unit="LBS/FT">500000</spring_coeff>
+         <damping_coeff unit="LBS/FT/SEC">20000</damping_coeff>
+      </contact>
+      <contact type="STRUCTURE" name="BOTTOM_R">
+         <location unit="IN">
+            <x>569.6</x>
+            <y>24.0</y>
+            <z>70.9</z>
+         </location>
+         <static_friction>0.2</static_friction>
+         <dynamic_friction>0.2</dynamic_friction>
+         <spring_coeff unit="LBS/FT">500000</spring_coeff>
+         <damping_coeff unit="LBS/FT/SEC">20000</damping_coeff>
+      </contact>
+      <contact type="STRUCTURE" name="WINGTIP_L">
+         <location unit="IN">
+            <x>475.3</x>
+            <y>-222</y>
+            <z>112.6</z>
+         </location>
+         <static_friction>0.2</static_friction>
+         <dynamic_friction>0.2</dynamic_friction>
+         <spring_coeff unit="LBS/FT">500000</spring_coeff>
+         <damping_coeff unit="LBS/FT/SEC">20000</damping_coeff>
+      </contact>
+      <contact type="STRUCTURE" name="WINGTIP_R">
+         <location unit="IN">
+            <x>475.3</x>
+            <y>222</y>
+            <z>112.6</z>
+         </location>
+         <static_friction>0.2</static_friction>
+         <dynamic_friction>0.2</dynamic_friction>
+         <spring_coeff unit="LBS/FT">500000</spring_coeff>
+         <damping_coeff unit="LBS/FT/SEC">20000</damping_coeff>
+      </contact>
+
+   </ground_reactions>
+
+   <propulsion>
+      <engine file="F404-GE-400">
+         <location unit="IN">
+            <x> 460.91 </x>
+            <y> -20 </y>
+            <z> 105.39 </z>
+         </location>
+         <orient unit="DEG">
+            <roll> 0.0 </roll>
+            <pitch> 0 </pitch>
+            <yaw> 0.017453 </yaw>
+         </orient>
+         <feed>0</feed>
+         <thruster file="direct">
+            <location unit="IN">
+               <x> 460.91 </x>
+               <y> -20 </y>
+               <z> 105.39 </z>
+            </location>
+            <orient unit="DEG">
+               <roll> 0.0 </roll>
+               <pitch> 0.0 </pitch>
+               <yaw> 0.0 </yaw>
+            </orient>
+         </thruster>
+      </engine>
+      <engine file="F404-GE-400">
+         <location unit="IN">
+            <x> 460.91 </x>
+            <y> 20 </y>
+            <z> 105.39 </z>
+         </location>
+         <orient unit="DEG">
+            <roll> 0.0 </roll>
+            <pitch> 0 </pitch>
+            <yaw> -0.017453 </yaw>
+         </orient>
+         <feed>1</feed>
+         <thruster file="direct">
+            <location unit="IN">
+               <x> 460.91 </x>
+               <y> 20 </y>
+               <z> 105.39 </z>
+            </location>
+            <orient unit="DEG">
+               <roll> 0.0 </roll>
+               <pitch> 0.0 </pitch>
+               <yaw> 0.0 </yaw>
+            </orient>
+         </thruster>
+      </engine>
+      <tank type="FUEL">    <!-- Tank number 0 --> 
+         <location unit="IN">
+            <x> 455.3 </x>
+            <y> 0 </y>
+            <z> 102.6 </z>
+         </location>
+         <capacity unit="LBS">3200</capacity>
+         <contents unit="LBS">3000</contents>
+      </tank>
+      <tank type="FUEL">    <!-- Tank number 1 --> 
+         <location unit="IN">
+            <x> 455.3 </x>
+            <y> 0 </y>
+            <z> 102.6 </z>
+         </location>
+         <capacity unit="LBS">3200</capacity>
+         <contents unit="LBS">3000</contents>
+      </tank>
+      <tank type="FUEL">    <!-- Tank number 2 --> 
+         <location unit="IN">
+            <x> 455.3 </x>
+            <y> 0 </y>
+            <z> 102.6 </z>
+         </location>
+         <capacity unit="LBS">0</capacity>
+         <contents unit="LBS">0</contents>
+      </tank>
+   </propulsion>
+
+
+   <flight_control name="FA-18">
+      <channel name="All">
+         <!-- Implement g limiter -->
+         <summer name="pitch trim sum">
+            <input>fcs/elevator-cmd-norm</input>
+            <input>fcs/pitch-trim-cmd-norm</input>
+            <clipto>
+               <min>-1</min>
+               <max>0.3</max>
+            </clipto>
+         </summer>
+
+         <!-- I need a constant 1.0 -->
+         <summer name="constant one">
+            <input>fcs/aileron-cmd-norm</input>
+            <clipto>
+               <min>1</min>
+               <max>1.000000000001</max>
+            </clipto>
+         </summer>
+
+        <!-- Subtract 1.0 from g load -->
+        <summer name="g load">
+            <input>-accelerations/n-pilot-z-norm</input>
+            <input>-fcs/constant-one</input>
+        </summer>
+
+        <!-- Scale g load by 0.1, so we get a g limitier to a max g load
+             of 10g. To limit the negative load to -3g
+             clip the output at -0.3. Since pure gains have no clipto parameter,
+             we need to use an other component ... -->
+        <pure_gain name="g load norm">
+            <input>fcs/g-load</input>
+            <gain>0.1</gain>
+        </pure_gain>
+
+        <summer name="neg g load norm">
+            <input>fcs/g-load-norm</input>
+            <clipto>
+                <min>-1</min>
+                <max>0</max>
+            </clipto>
+        </summer>
+
+        <summer name="pos g load norm">
+            <input>fcs/g-load-norm</input>
+            <clipto>
+                <min>0</min>
+                <max>1</max>
+            </clipto>
+        </summer>
+
+        <summer name="abs g load norm">
+            <input>fcs/pos-g-load-norm</input>
+            <input>-fcs/neg-g-load-norm</input>
+        </summer>
+
+        <summer name="g blend scheduler">
+            <input>fcs/abs-g-load-norm</input>
+            <input>velocities/mach</input>
+        </summer>
+
+        <scheduled_gain name="g load blend">
+            <input>fcs/g-load-norm</input>
+            <table>
+                <independentVar>fcs/g-blend-scheduler</independentVar>
+                <tableData>
+                    0.0000	0.0000	
+                    1.0000	1.0000	
+                </tableData>
+            </table>
+        </scheduled_gain>
+
+
+ 
+        <!-- Scale aoa with 1/(50deg).
+             That means we get 50 deg aoa with full stick command. -->
+        <pure_gain name="alpha norm">
+            <input>aero/alpha-deg</input>
+            <gain>0.0200</gain>
+        </pure_gain>
+
+        <!-- Blend away the aoa error with raising g loads -->
+        <scheduled_gain name="scheduled alpha norm">
+            <input>fcs/alpha-norm</input>
+            <table>
+                <independentVar>fcs/g-blend-scheduler</independentVar>
+                <tableData>
+                    0.0000	1.0000	
+                    1.2000	0.0000	
+                </tableData>
+            </table>
+        </scheduled_gain>
+
+        <scheduled_gain name="pitch rate gain">
+            <input>velocities/q-aero-rad_sec</input>
+            <table>
+                <independentVar>velocities/mach</independentVar>
+                <tableData>
+                    0.3000	5.0000	
+                    0.9000	0.5000	
+                </tableData>
+            </table>
+        </scheduled_gain>
+
+        <summer name="pitch cmd error">
+            <input>fcs/pitch-trim-sum</input>
+            <input>fcs/g-load-norm</input>
+            <input>fcs/scheduled-alpha-norm</input>
+            <input>fcs/pitch-rate-gain</input>
+        </summer>
+
+        <scheduled_gain name="g load p">
+            <input>fcs/pitch-cmd-error</input>
+            <table>
+                <independentVar>velocities/mach</independentVar>
+                <tableData>
+                    0.2000	0.5000	
+                    1.8000	0.1000	
+                </tableData>
+            </table>
+        </scheduled_gain>
+
+        <integrator name="g load i">
+            <input>fcs/pitch-cmd-error</input>
+            <c1>0.0050</c1>
+        </integrator>
+
+        <summer name="g load command">
+            <input>fcs/g-load-p</input>
+            <clipto>
+                <min>-1.0000</min>
+                <max>1.0000</max>
+            </clipto>
+        </summer>
+
+        <scheduled_gain name="pitch cmd norm">
+            <input>fcs/g-load-command</input>
+            <table>
+                <independentVar>velocities/mach</independentVar>
+                <tableData>
+                    0.2000	1.0000	
+                    1.8000	1.0000	
+                </tableData>
+            </table>
+        </scheduled_gain>
+
+        <!-- The aileron/flaps system. -->
+        <summer name="roll trim sum">
+            <input>fcs/aileron-cmd-norm</input>
+            <input>fcs/roll-trim-cmd-norm</input>
+        </summer>
+
+        <!-- Scale roll rate with 1/(360deg) -->
+        <pure_gain name="roll rate norm">
+            <input>velocities/p-rad_sec</input>
+            <gain>-0.1592</gain>
+        </pure_gain>
+
+        <!-- sum the roll rate error -->
+        <summer name="roll cmd error">
+            <input>fcs/roll-trim-sum</input>
+            <input>fcs/roll-rate-norm</input>
+        </summer>
+
+        <scheduled_gain name="Aileron Cmd Deg">
+            <input>fcs/roll-cmd-error</input>
+            <table>
+                <independentVar>velocities/mach</independentVar>
+                <tableData>
+                    0.2000	25.0000	
+                    1.2000	15.0000	
+                </tableData>
+            </table>
+        </scheduled_gain>
+
+        <kinematic name="Trailing Edge Flaps Cmd Deg">
+            <input>fcs/flap-cmd-norm</input>
+            <traverse>
+                <setting>
+                    <position>0.0000</position>
+                    <time>2.5000</time>
+                </setting>
+                <setting>
+                    <position>45.0000</position>
+                    <time>2.5000</time>
+                </setting>
+            </traverse>
+<!--             <output>fcs/trailing-edge-flaps-cmd-deg</output> -->
+        </kinematic>
+
+        <summer name="Left Aileron Cmd Deg">
+            <input>fcs/trailing-edge-flaps-cmd-deg</input>
+            <input>fcs/aileron-cmd-deg</input>
+        </summer>
+
+        <summer name="Right Aileron Cmd Deg">
+            <input>fcs/trailing-edge-flaps-cmd-deg</input>
+            <input>-fcs/aileron-cmd-deg</input>
+        </summer>
+
+        <!--
+         Aileron:
+           Rate limit: 100deg/s
+           Trailing edge up 25 deg
+           Trailing edge down 45 deg
+         -->
+        <kinematic name="Left Aileron Pos Deg">
+            <input>fcs/left-aileron-cmd-deg</input>
+            <noscale>1</noscale>
+            <traverse>
+                <setting>
+                    <position>-25.0000</position>
+                    <time>0.6000</time>
+                </setting>
+                <setting>
+                    <position>45.0000</position>
+                    <time>0.6000</time>
+                </setting>
+            </traverse>
+        </kinematic>
+
+        <kinematic name="Right Aileron Pos Deg">
+            <input>fcs/right-aileron-cmd-deg</input>
+            <noscale>1</noscale>
+            <traverse>
+                <setting>
+                    <position>-25.0000</position>
+                    <time>0.6000</time>
+                </setting>
+                <setting>
+                    <position>45.0000</position>
+                    <time>0.6000</time>
+                </setting>
+            </traverse>
+        </kinematic>
+
+        <!-- This is the input value to the flight control system. -->
+        <summer name="Aileron Pos Diff Deg">
+            <input>fcs/left-aileron-pos-deg</input>
+            <input>-fcs/right-aileron-pos-deg</input>
+        </summer>
+
+        <!--
+           Trailing edge flap:
+             Rate limit 18deg/s
+             Trailing edge up 8 deg
+             Trailing edge down 45 deg
+        -->
+        <kinematic name="Trailing Edge Flaps Pos Deg">
+            <input>fcs/trailing-edge-flaps-cmd-deg</input>
+            <noscale>1</noscale>
+            <traverse>
+                <setting>
+                    <position>-8.0000</position>
+                    <time>2.9500</time>
+                </setting>
+                <setting>
+                    <position>45.0000</position>
+                    <time>2.9500</time>
+                </setting>
+            </traverse>
+<!--             <output>fcs/trailing-edge-flaps-pos-deg</output> -->
+        </kinematic>
+
+   <!-- Now that we really know everything we need, make JSBSim/Flightgear
+        happy and scale around to death, just to push the values
+        into flightgear.
+        Method: dived by 100. Then we have the position normailzed for a
+                range of -100 to 100. Then scale again to the range
+                -100/180*pi to 100/180*pi. Then 'normalized' animation inputs
+                are normailzed from -100 to 100.
+   -->
+        <pure_gain name="Left Aileron Pos Norm100">
+            <input>fcs/left-aileron-pos-deg</input>
+            <gain>0.0100</gain>
+        </pure_gain>
+
+        <aerosurface_scale name="Left Aileron Control">
+            <input>fcs/left-aileron-pos-norm100</input>
+            <range>
+                <min>-1.7453</min>
+                <max>1.7453</max>
+            </range>
+            <output>fcs/left-aileron-pos-rad</output>
+        </aerosurface_scale>
+
+        <pure_gain name="Right Aileron Pos Norm100">
+            <input>fcs/right-aileron-pos-deg</input>
+            <gain>0.0100</gain>
+        </pure_gain>
+
+        <aerosurface_scale name="Right Aileron Control">
+            <input>fcs/right-aileron-pos-norm100</input>
+            <range>
+                <min>-1.7453</min>
+                <max>1.7453</max>
+            </range>
+            <output>fcs/right-aileron-pos-rad</output>
+        </aerosurface_scale>
+
+        <pure_gain name="Trailing Edge Flaps Pos Norm100">
+            <input>fcs/trailing-edge-flaps-pos-deg</input>
+            <gain>0.0100</gain>
+        </pure_gain>
+
+        <aerosurface_scale name="Flaps Control">
+            <input>fcs/trailing-edge-flaps-pos-norm100</input>
+            <range>
+                <min>-1.7453</min>
+                <max>1.7453</max>
+            </range>
+            <output>fcs/flap-pos-deg</output>
+        </aerosurface_scale>
+
+   <!--
+      Stabilator:
+        Trailing edge up 24 deg
+        Trailing edge down 10.5 deg
+        Rate limit: 40deg/s
+   -->
+        <summer name="Left Stabilator Command Sum">
+            <input>fcs/pitch-cmd-norm</input>
+            <input>fcs/roll-trim-sum</input>
+        </summer>
+
+        <pure_gain name="Left Stabilator Cmd Deg">
+            <input>fcs/left-stabilator-command-sum</input>
+            <gain>25.0000</gain>
+        </pure_gain>
+
+        <kinematic name="Left Stabilator Pos Deg">
+            <input>fcs/left-stabilator-cmd-deg</input>
+            <noscale>1</noscale>
+            <traverse>
+                <setting>
+                    <position>-24.0000</position>
+                    <time>0.8600</time>
+                </setting>
+                <setting>
+                    <position>10.5000</position>
+                    <time>0.8600</time>
+                </setting>
+            </traverse>
+<!--             <output>fcs/left-stabilator-pos-deg</output> -->
+        </kinematic>
+
+        <pure_gain name="Left Stabilator Pos Rad">
+            <input>fcs/left-stabilator-pos-deg</input>
+            <gain>0.0175</gain>
+        </pure_gain>
+
+        <pure_gain name="Surface Positions Left Stabilator Pos Deg">
+            <input>fcs/left-stabilator-pos-deg</input>
+            <output>/surface-positions/left-stabilator-pos-deg</output>
+        </pure_gain>
+
+        <summer name="Right Stabilator Command Sum">
+            <input>fcs/pitch-cmd-norm</input>
+            <input>-fcs/roll-trim-sum</input>
+        </summer>
+
+        <pure_gain name="Right Stabilator Cmd Deg">
+            <input>fcs/right-stabilator-command-sum</input>
+            <gain>25.0000</gain>
+        </pure_gain>
+
+        <kinematic name="Right Stabilator Pos Deg">
+            <input>fcs/right-stabilator-cmd-deg</input>
+            <noscale>1</noscale>
+            <traverse>
+                <setting>
+                    <position>-24.0000</position>
+                    <time>0.8600</time>
+                </setting>
+                <setting>
+                    <position>10.5000</position>
+                    <time>0.8600</time>
+                </setting>
+            </traverse>
+<!--             <output>fcs/right-stabilator-pos-deg</output> -->
+        </kinematic>
+
+        <pure_gain name="Right Stabilator Pos Rad">
+            <input>fcs/right-stabilator-pos-deg</input>
+            <gain>0.0175</gain>
+        </pure_gain>
+
+        <pure_gain name="Surface Positions Right Stabilator Pos Deg">
+            <input>fcs/right-stabilator-pos-deg</input>
+            <output>/surface-positions/right-stabilator-pos-deg</output>
+        </pure_gain>
+
+        <summer name="Stabilator Difference Deg">
+            <input>fcs/right-stabilator-pos-deg</input>
+            <input>-fcs/left-stabilator-pos-deg</input>
+        </summer>
+
+   <!--
+      Leading edge flap:
+        Rate limit 15deg/s
+        Leading edge up 3 deg (!??)
+        Leading edge down 33 deg
+
+      At the moment only used for animations.
+   -->
+        <pure_gain name="Leading Edge Flaps Cmd Deg">
+            <input>aero/alpha-rad</input>
+            <gain>57.2960</gain>
+        </pure_gain>
+
+        <summer name="Left Leading Edge Flap Cmd Deg">
+            <input>fcs/leading-edge-flaps-cmd-deg</input>
+        </summer>
+
+        <summer name="Right Leading Edge Flap Cmd Deg">
+            <input>fcs/leading-edge-flaps-cmd-deg</input>
+        </summer>
+
+        <kinematic name="Left Leading Edge Flap Pos Deg">
+            <input>fcs/left-leading-edge-flap-cmd-deg</input>
+            <noscale>1</noscale>
+            <traverse>
+                <setting>
+                    <position>-3.0000</position>
+                    <time>2.4000</time>
+                </setting>
+                <setting>
+                    <position>33.0000</position>
+                    <time>2.4000</time>
+                </setting>
+            </traverse>
+<!--             <output>fcs/left-leading-edge-flap-pos-deg</output> -->
+        </kinematic>
+
+        <kinematic name="Right Leading Edge Flap Pos Deg">
+            <input>fcs/right-leading-edge-flap-cmd-deg</input>
+            <noscale>1</noscale>
+            <traverse>
+                <setting>
+                    <position>-3.0000</position>
+                    <time>2.4000</time>
+                </setting>
+                <setting>
+                    <position>33.0000</position>
+                    <time>2.4000</time>
+                </setting>
+            </traverse>
+<!--             <output>fcs/right-leading-edge-flap-pos-deg</output> -->
+        </kinematic>
+
+        <pure_gain name="Left Leading Edge Flap Output">
+            <input>fcs/left-leading-edge-flap-pos-deg</input>
+            <gain>1</gain>
+            <output>/surface-positions/left-leading-edge-flap-pos-deg</output>
+        </pure_gain>
+
+        <pure_gain name="Right Leading Edge Flap Output">
+            <input>fcs/right-leading-edge-flap-pos-deg</input>
+            <gain>1</gain>
+            <output>/surface-positions/right-leading-edge-flap-pos-deg</output>
+        </pure_gain>
+
+   <!-- The rudder/yaw subsystem -->
+        <summer name="Rudder Command Sum">
+            <input>fcs/rudder-cmd-norm</input>
+            <input>fcs/yaw-trim-cmd-norm</input>
+            <clipto>
+                <min>-1.0000</min>
+                <max>1.0000</max>
+            </clipto>
+        </summer>
+
+   <!--
+      This famous yaw damper. Taken from the jsbsim web page ...
+     -->
+        <scheduled_gain name="Yaw Damper Rate">
+            <input>velocities/r-aero-rad_sec</input>
+            <table>
+                <independentVar>aero/qbar-psf</independentVar>
+                <tableData>
+                    3.0000	0.0000	
+                    11.0000	2.0000	
+                </tableData>
+            </table>
+        </scheduled_gain>
+
+        <scheduled_gain name="Yaw Damper Beta">
+            <input>aero/beta-rad</input>
+            <table>
+                <independentVar>aero/qbar-psf</independentVar>
+                <tableData>
+                    3.0000	0.0000	
+                    11.0000	0.0000	
+                </tableData>
+            </table>
+        </scheduled_gain>
+
+        <summer name="Yaw Damper Sum">
+            <input>fcs/yaw-damper-beta</input>
+            <input>fcs/yaw-damper-rate</input>
+            <clipto>
+                <min>-0.2000</min>
+                <max>0.2000</max>
+            </clipto>
+        </summer>
+
+        <scheduled_gain name="Yaw Damper Final">
+            <input>fcs/yaw-damper-sum</input>
+            <table>
+                <independentVar>aero/qbar-psf</independentVar>
+                <tableData>
+                    2.9900	0.0000	
+                    3.0000	1.0000	
+                </tableData>
+            </table>
+        </scheduled_gain>
+
+        <summer name="Rudder Sum">
+            <input>fcs/rudder-command-sum</input>
+            <input>fcs/yaw-damper-final</input>
+            <clipto>
+                <min>-1.0000</min>
+                <max>1.0000</max>
+            </clipto>
+        </summer>
+
+   <!--
+      Rudder:
+        Trailing edge left 30 deg
+        Trailing edge right 30 deg
+   -->
+        <aerosurface_scale name="Rudder Control">
+            <input>fcs/rudder-sum</input>
+            <range>
+                <min>-0.5240</min>
+                <max>0.5240</max>
+            </range>
+            <output>fcs/rudder-pos-rad</output>
+        </aerosurface_scale>
+
+        <scheduled_gain name="Throttle1">
+            <input>fcs/throttle-cmd-norm</input>
+            <table>
+                <independentVar>fcs/throttle-cmd-norm</independentVar>
+                <tableData>
+                    0.0000	1.0000	
+                    0.9699	1.0000	
+                    0.9700	1.0300	
+                    0.9790	1.0210	
+                    0.9800	1.1905	
+                    0.9829	1.1870	
+                    0.9830	1.3564	
+                    0.9859	1.3524	
+                    0.9860	1.5213	
+                    0.9889	1.5168	
+                    0.9890	1.6852	
+                    0.9919	1.6803	
+                    0.9920	1.8481	
+                    0.9949	1.8427	
+                    0.9950	2.0103	
+                    1.0000	2.0000	
+                </tableData>
+            </table>
+            <output>fcs/throttle-pos-norm</output>
+        </scheduled_gain>
+
+        <scheduled_gain name="Throttle2">
+            <input>fcs/throttle-cmd-norm[1]</input>
+            <table>
+                <independentVar>fcs/throttle-cmd-norm[1]</independentVar>
+                <tableData>
+                    0.0000	1.0000	
+                    0.9699	1.0000	
+                    0.9700	1.0300	
+                    0.9790	1.0210	
+                    0.9800	1.1905	
+                    0.9829	1.1870	
+                    0.9830	1.3564	
+                    0.9859	1.3524	
+                    0.9860	1.5213	
+                    0.9889	1.5168	
+                    0.9890	1.6852	
+                    0.9919	1.6803	
+                    0.9920	1.8481	
+                    0.9949	1.8427	
+                    0.9950	2.0103	
+                    1.0000	2.0000	
+                </tableData>
+            </table>
+            <output>fcs/throttle-pos-norm[1]</output>
+        </scheduled_gain>
+
+   <!--
+      Gear movement.
+   -->
+        <kinematic name="Gear Control">
+            <input>gear/gear-cmd-norm</input>
+            <traverse>
+                <setting>
+                    <position>0.0000</position>
+                    <time>0.0000</time>
+                </setting>
+                <setting>
+                    <position>1.0000</position>
+                    <time>5.0000</time>
+                </setting>
+            </traverse>
+            <output>gear/gear-pos-norm</output>
+        </kinematic>
+
+        <scheduled_gain name="Scheduled Steer Cmd Deg">
+            <input>fcs/steer-cmd-norm</input>
+            <table>
+                <independentVar>velocities/vg-fps</independentVar>
+                <tableData>
+                    10.0000	80.0000	
+                    50.0000	15.0000	
+                    150.0000	2.0000	
+                </tableData>
+            </table>
+            <output>fcs/steer-pos-deg</output>
+        </scheduled_gain>
+
+   <!--
+      Speedbrake:
+        Rate limit 20-30 deg/s
+        Speedbrake 60 deg
+   -->
+        <kinematic name="Speedbrake Control">
+            <input>fcs/speedbrake-cmd-norm</input>
+            <traverse>
+                <setting>
+                    <position>0.0000</position>
+                    <time>2.5000</time>
+                </setting>
+                <setting>
+                    <position>1.0000</position>
+                    <time>2.5000</time>
+                </setting>
+            </traverse>
+            <output>fcs/speedbrake-pos-norm</output>
+        </kinematic>
+
+   <!--
+      Wing Folding:
+        Rate limit 20-30 deg/s
+        Speedbrake 60 deg
+   -->
+        <kinematic name="Wing Fold Control">
+            <input>/controls/flight/wing-fold</input>
+            <traverse>
+                <setting>
+                    <position>0.0000</position>
+                    <time>5.0000</time>
+                </setting>
+                <setting>
+                    <position>1.0000</position>
+                    <time>5.0000</time>
+                </setting>
+            </traverse>
+            <output>/surface-positions/wing-fold-pos-norm</output>
+        </kinematic>
+     </channel>
+    </flight_control>
+
+    <aerodynamics>
+
+   <!-- The values here are taken from MATLAB files from the
+        FA-18 HARV which can be found at
+
+         http://www.dfrc.nasa.gov/Research/HARV/Work/NASA2/nasa2.html
+
+        The lift axis is here given by the equation
+
+         cd = cd0 + (cbar/(2*v))*cd_q*q + cd_del*del + cd_der*der;
+
+        where cbar and v have the usual meaning. The pitch rate is denoted by q
+        and the stabilizer positions of the left and right stabilizer are denoted by
+        del respectivly der in the above equation. All angles and angular rates
+        are in degree.
+
+        Below are the original tables like they are found in the matlab files
+
+ALPHA_BREAK = [      -14.0000  -10.00000   -6.00000   -2.00000    2.00000    6.00000 ...
+   10.00000    14.0000    18.0000    22.0000    26.0000    30.0000    34.0000 ...
+    38.0000    42.0000    46.0000    50.0000    54.0000    58.0000    62.0000 ...
+    66.0000    70.0000    74.0000    78.0000    82.0000    86.0000    90.0000]';
+
+%
+% here is cd0
+%
+cd0 = [  0.227325   0.170673    7.47685E-02    3.20977E-02    2.79305E-02 ...
+            6.13288E-02   0.154023   0.261263   0.363863   0.486635   0.643989   0.863792 ...
+            1.08558    1.27900    1.47638    1.61911    1.74604    1.84448    1.92402 ...
+            1.98384    2.02834    2.06708    2.11362    2.15514    2.17363    2.16283 ...
+            2.12822]';
+%
+% here is cd_q
+%
+cd_q = [ 1.48740E-16   -2.21604E-16   -8.70391E-05   -7.79330E-04   -8.31959E-04 ...
+           -6.60720E-05    1.33279E-03    1.67685E-04    5.84481E-06   -9.59697E-17 ...
+           -6.48262E-17   -2.05428E-16   -2.53047E-16    2.02363E-16    3.51664E-16 ...
+            8.52635E-16    5.44982E-16   -5.45460E-16    1.14528E-15   -2.50755E-16 ...
+            8.43503E-16   -8.45493E-16   -2.54842E-15   -7.66583E-16   -3.79368E-16 ...
+            9.11688E-16    9.07194E-16]';
+%
+% here is cd_del
+%
+cd_del = [ -2.63851E-03   -2.42289E-03   -2.00960E-03   -1.61668E-03   -1.11178E-03 ...
+           -4.31951E-04    4.33892E-04    1.11520E-03    1.97203E-03    2.82682E-03 ...
+            3.59917E-03    4.29851E-03    4.93824E-03    5.55955E-03    5.88711E-03 ...
+            5.82388E-03    5.49440E-03    5.22574E-03    5.15071E-03    5.18088E-03 ...
+            5.20101E-03    5.06911E-03    3.65306E-03    2.50369E-03    1.69598E-03 ...
+            1.25007E-03    1.13131E-03]';
+%
+% here is cd_der
+%
+cd_der = [ -2.63851E-03   -2.42289E-03   -2.00960E-03   -1.61668E-03   -1.11178E-03 ...
+           -4.31951E-04    4.33892E-04    1.11520E-03    1.97203E-03    2.82682E-03 ...
+            3.59917E-03    4.29851E-03    4.93824E-03    5.55955E-03    5.88711E-03 ...
+            5.82388E-03    5.49440E-03    5.22574E-03    5.15071E-03    5.18088E-03 ...
+            5.20101E-03    5.06911E-03    3.65306E-03    2.50369E-03    1.69598E-03 ...
+            1.25007E-03    1.13131E-03]';
+
+ -->
+        <axis name="DRAG">
+            <function name="aero/coefficient/CD0">
+                <description>Drag_at_zero_lift</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+      -0.2443460 0.227325
+      -0.1745329 0.170673
+      -0.1047197 7.47685E-02
+      -0.0349065 3.20977E-02
+       0.0349065 2.79305E-02
+       0.1047197 6.13288E-02
+       0.1745329 0.154023
+       0.2443460 0.261263
+       0.3141592 0.363863
+       0.3839724 0.486635
+       0.4537856 0.643989
+       0.5235987 0.863792
+       0.5934119 1.08558
+       0.6632251 1.27900
+       0.7330382 1.47638
+       0.8028514 1.61911
+       0.8726646 1.74604
+       0.9424777 1.84448
+       1.0122909 1.92402
+       1.0821041 1.98384
+       1.1519173 2.02834
+       1.2217304 2.06708
+       1.2915436 2.11362
+       1.3613568 2.15514
+       1.4311699 2.17363
+       1.5009831 2.16283
+       1.5707963 2.12822
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+            <function name="aero/coefficient/CDq">
+                <description>Drag_due_to_alpha_and_pitch_rate</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>aero/ci2vel</property>
+                    <property>velocities/q-aero-rad_sec</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01   8.5222e-15
+  -1.7453e-01  -1.2697e-14
+  -1.0472e-01  -4.9870e-03
+  -3.4907e-02  -4.4652e-02
+   3.4907e-02  -4.7668e-02
+   1.0472e-01  -3.7856e-03
+   1.7453e-01   7.6363e-02
+   2.4435e-01   9.6076e-03
+   3.1416e-01   3.3488e-04
+   3.8397e-01  -5.4987e-15
+   4.5379e-01  -3.7143e-15
+   5.2360e-01  -1.1770e-14
+   5.9341e-01  -1.4499e-14
+   6.6323e-01   1.1595e-14
+   7.3304e-01   2.0149e-14
+   8.0285e-01   4.8852e-14
+   8.7266e-01   3.1225e-14
+   9.4248e-01  -3.1253e-14
+   1.0123e+00   6.5620e-14
+   1.0821e+00  -1.4367e-14
+   1.1519e+00   4.8329e-14
+   1.2217e+00  -4.8443e-14
+   1.2915e+00  -1.4601e-13
+   1.3614e+00  -4.3922e-14
+   1.4312e+00  -2.1736e-14
+   1.5010e+00   5.2236e-14
+   1.5708e+00   5.1978e-14
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+            <function name="aero/coefficient/CDderalpha">
+                <description>Drag_due_to_right_stabilizer</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/right-stabilator-pos-deg</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01  -2.6385e-03
+  -1.7453e-01  -2.4229e-03
+  -1.0472e-01  -2.0096e-03
+  -3.4907e-02  -1.6167e-03
+   3.4907e-02  -1.1118e-03
+   1.0472e-01  -4.3195e-04
+   1.7453e-01   4.3389e-04
+   2.4435e-01   1.1152e-03
+   3.1416e-01   1.9720e-03
+   3.8397e-01   2.8268e-03
+   4.5379e-01   3.5992e-03
+   5.2360e-01   4.2985e-03
+   5.9341e-01   4.9382e-03
+   6.6323e-01   5.5595e-03
+   7.3304e-01   5.8871e-03
+   8.0285e-01   5.8239e-03
+   8.7266e-01   5.4944e-03
+   9.4248e-01   5.2257e-03
+   1.0123e+00   5.1507e-03
+   1.0821e+00   5.1809e-03
+   1.1519e+00   5.2010e-03
+   1.2217e+00   5.0691e-03
+   1.2915e+00   3.6531e-03
+   1.3614e+00   2.5037e-03
+   1.4312e+00   1.6960e-03
+   1.5010e+00   1.2501e-03
+   1.5708e+00   1.1313e-03
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+            <function name="aero/coefficient/CDdelalpha">
+                <description>Drag_due_to_left_stabilizer</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/left-stabilator-pos-deg</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01  -2.6385e-03
+  -1.7453e-01  -2.4229e-03
+  -1.0472e-01  -2.0096e-03
+  -3.4907e-02  -1.6167e-03
+   3.4907e-02  -1.1118e-03
+   1.0472e-01  -4.3195e-04
+   1.7453e-01   4.3389e-04
+   2.4435e-01   1.1152e-03
+   3.1416e-01   1.9720e-03
+   3.8397e-01   2.8268e-03
+   4.5379e-01   3.5992e-03
+   5.2360e-01   4.2985e-03
+   5.9341e-01   4.9382e-03
+   6.6323e-01   5.5595e-03
+   7.3304e-01   5.8871e-03
+   8.0285e-01   5.8239e-03
+   8.7266e-01   5.4944e-03
+   9.4248e-01   5.2257e-03
+   1.0123e+00   5.1507e-03
+   1.0821e+00   5.1809e-03
+   1.1519e+00   5.2010e-03
+   1.2217e+00   5.0691e-03
+   1.2915e+00   3.6531e-03
+   1.3614e+00   2.5037e-03
+   1.4312e+00   1.6960e-03
+   1.5010e+00   1.2501e-03
+   1.5708e+00   1.1313e-03
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- Left from aeromatic ... Have to investigate ... -->
+            <function name="aero/coefficient/CDmach">
+                <description>Drag_due_to_mach</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                      <table>
+                          <independentVar>velocities/mach</independentVar>
+                          <tableData>
+                              0.0000	0.0000	
+                              0.8100	0.0000	
+                              1.1000	0.0230	
+                              1.8000	0.0150	
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+            <function name="aero/coefficient/CDflap">
+                <description>Drag_due_to_flaps</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/flap-pos-norm</property>
+                    <value>0.2500</value>
+                </product>
+            </function>
+            <function name="aero/coefficient/CDgear">
+                <description>Drag_due_to_gear</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>gear/gear-pos-norm</property>
+                    <value>0.1500</value>
+                </product>
+            </function>
+            <function name="aero/coefficient/CDsb">
+                <description>Drag_due_to_speedbrakes</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/speedbrake-pos-norm</property>
+                    <value>0.2000</value>
+                </product>
+            </function>
+        </axis>
+
+        <axis name="SIDE">
+   <!-- The values here are taken from MATLAB files from the
+        FA-18 HARV which can be found at
+
+         http://www.dfrc.nasa.gov/Research/HARV/Work/NASA2/nasa2.html
+
+        The lift axis is here given by the equation
+
+         cy = cy_b*bta + (b/(2*v))*cy_p*p + (b/(2*v))*cy_r*r ... 
+              + cy_dal*dal + cy_del*del + cy_der*der + cy_dr*dr;
+
+        where bta, cbar and v have the usual meaning. The roll rate is denoted by p,
+        the yaw rate is r. Aileron positions are given by dal, rudder position is dr
+        and the stabilizer positions of the left and right stabilizer are denoted by
+        del respectivly der in the above equation. All angles and angular rates
+        are in degree.
+
+        Below are the original tables like they are found in the matlab files
+
+ALPHA_BREAK = [      -14.0000  -10.00000   -6.00000   -2.00000    2.00000    6.00000 ...
+   10.00000    14.0000    18.0000    22.0000    26.0000    30.0000    34.0000 ...
+    38.0000    42.0000    46.0000    50.0000    54.0000    58.0000    62.0000 ...
+    66.0000    70.0000    74.0000    78.0000    82.0000    86.0000    90.0000]';
+
+%
+% here is cy_b
+%
+cy_b = [   -1.71957E-02   -1.71957E-02   -1.77407E-02   -1.82857E-02   -1.84197E-02 ...
+           -1.84159E-02   -1.87763E-02   -1.77142E-02   -1.55057E-02   -1.40980E-02 ... 
+           -1.28732E-02   -1.26852E-02   -1.25160E-02   -1.35594E-02   -1.40314E-02 ...
+           -1.33128E-02   -1.19496E-02   -1.30678E-02   -1.37112E-02   -1.37528E-02 ...
+           -1.33426E-02   -1.29076E-02   -1.33076E-02   -1.38320E-02   -1.37811E-02 ...
+           -1.31714E-02   -1.27360E-02]';
+%
+% here is cy_p
+%
+cy_p = [   -1.06465E-03   -1.06465E-03   -1.06465E-03   -8.63938E-04   -2.09440E-04 ...
+            4.14516E-04    5.80322E-04    5.32325E-04    4.53786E-04    2.22529E-04 ...
+           -1.74533E-04   -5.49779E-04   -9.42478E-04   -1.35699E-03   -2.60752E-03 ...
+           -4.39823E-03   -5.23599E-03   -3.00197E-03   -1.65806E-03   -7.85399E-04 ...
+           -2.96706E-04   -4.36332E-04   -9.25024E-04   -9.94838E-04   -9.25024E-04 ...
+           -9.77384E-04   -1.39626E-03]';
+%
+% here is cy_r
+%
+cy_r = [    2.69653E-03    2.69653E-03    2.69653E-03    2.89725E-03    3.36412E-03 ...
+            3.94444E-03    4.45932E-03    3.82227E-03    1.22609E-03   -1.61443E-03 ...
+           -3.46448E-03   -4.66876E-03   -5.36689E-03   -5.67232E-03   -3.89208E-03 ...
+            3.49069E-05    5.06146E-03    5.06145E-03    4.11898E-03    2.79253E-03 ...
+            1.60570E-03    1.04720E-03    8.37758E-04    6.28319E-04    4.88692E-04 ...
+            4.18879E-04    3.49066E-04]';
+%
+% here is cy_da
+%
+cy_da = [  -5.77397E-04   -5.77397E-04   -5.77397E-04   -5.46240E-04   -4.60488E-04 ...
+           -4.06750E-04   -4.16183E-04   -3.70449E-04   -1.95515E-04    4.51627E-05 ...
+            2.63830E-04    4.73923E-04    6.38852E-04    7.09741E-04    6.50343E-04 ...
+            1.99345E-04   -1.00616E-04   -1.48179E-04   -1.74477E-04   -1.95743E-04 ...
+           -2.18725E-04   -2.40677E-04   -2.78179E-04   -3.06420E-04   -3.28602E-04 ...
+           -3.47581E-04   -3.65875E-04]';
+%
+% here is cy_del
+%
+cy_del =[   -1.21826E-03   -1.21826E-03   -1.21826E-03   -1.18543E-03   -1.08596E-03 ...
+           -9.69152E-04   -8.62255E-04   -7.02810E-04   -4.98886E-04   -2.88800E-04 ...
+           -4.99497E-05    2.06273E-04    4.27489E-04    5.91445E-04    7.25571E-04 ...
+            8.56568E-04    1.00528E-03    1.13120E-03    1.22832E-03    1.30397E-03 ...
+            1.29672E-03    1.07641E-03    5.04952E-04   -4.54204E-05   -5.69973E-04 ...
+           -1.00132E-03   -1.20941E-03]';
+%
+% here is cy_der
+%
+cy_der = [  1.21826E-03    1.21826E-03    1.21826E-03    1.18543E-03    1.08596E-03 ...
+            9.69152E-04    8.62255E-04    7.02810E-04    4.98886E-04    2.88800E-04 ...
+            4.99497E-05   -2.06273E-04   -4.27489E-04   -5.91445E-04   -7.25571E-04 ...
+           -8.56568E-04   -1.00528E-03   -1.13120E-03   -1.22832E-03   -1.30397E-03 ...
+           -1.29672E-03   -1.07641E-03   -5.04952E-04    4.54205E-05    5.69973E-04 ...
+            1.00132E-03    1.20941E-03]';
+%
+% here is cy_dr
+%
+cy_dr = [   3.46480E-03    3.46480E-03    3.46480E-03    3.52987E-03    3.66813E-03 ...
+            3.73320E-03    3.66813E-03    3.46480E-03    3.08253E-03    2.57827E-03 ...
+            2.11467E-03    1.79747E-03    1.59413E-03    1.47213E-03    1.50955E-03 ...
+            1.59771E-03    1.48189E-03    1.25806E-03    1.04497E-03    9.72747E-04 ...
+            1.04790E-03    1.15331E-03    1.10125E-03    1.01504E-03    1.04757E-03 ...
+            1.15266E-03    1.08499E-03]';
+
+    -->
+    <!-- cy += cy_b*bta -->
+            <function name="aero/coefficient/CYb">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>aero/beta-rad</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01  -9.8524e-01
+  -1.7453e-01  -9.8524e-01
+  -1.0472e-01  -1.0165e+00
+  -3.4907e-02  -1.0477e+00
+   3.4907e-02  -1.0554e+00
+   1.0472e-01  -1.0552e+00
+   1.7453e-01  -1.0758e+00
+   2.4435e-01  -1.0149e+00
+   3.1416e-01  -8.8841e-01
+   3.8397e-01  -8.0776e-01
+   4.5379e-01  -7.3758e-01
+   5.2360e-01  -7.2681e-01
+   5.9341e-01  -7.1711e-01
+   6.6323e-01  -7.7690e-01
+   7.3304e-01  -8.0394e-01
+   8.0285e-01  -7.6277e-01
+   8.7266e-01  -6.8466e-01
+   9.4248e-01  -7.4873e-01
+   1.0123e+00  -7.8559e-01
+   1.0821e+00  -7.8798e-01
+   1.1519e+00  -7.6447e-01
+   1.2217e+00  -7.3955e-01
+   1.2915e+00  -7.6247e-01
+   1.3614e+00  -7.9252e-01
+   1.4312e+00  -7.8960e-01
+   1.5010e+00  -7.5467e-01
+   1.5708e+00  -7.2972e-01
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- cy += (b/(2*v))*cy_p*p -->
+            <function name="aero/coefficient/CYp">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>aero/ci2vel</property>
+                    <property>velocities/p-aero-rad_sec</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01  -6.1000e-02
+  -1.7453e-01  -6.1000e-02
+  -1.0472e-01  -6.1000e-02
+  -3.4907e-02  -4.9500e-02
+   3.4907e-02  -1.2000e-02
+   1.0472e-01   2.3750e-02
+   1.7453e-01   3.3250e-02
+   2.4435e-01   3.0500e-02
+   3.1416e-01   2.6000e-02
+   3.8397e-01   1.2750e-02
+   4.5379e-01  -1.0000e-02
+   5.2360e-01  -3.1500e-02
+   5.9341e-01  -5.4000e-02
+   6.6323e-01  -7.7750e-02
+   7.3304e-01  -1.4940e-01
+   8.0285e-01  -2.5200e-01
+   8.7266e-01  -3.0000e-01
+   9.4248e-01  -1.7200e-01
+   1.0123e+00  -9.5000e-02
+   1.0821e+00  -4.5000e-02
+   1.1519e+00  -1.7000e-02
+   1.2217e+00  -2.5000e-02
+   1.2915e+00  -5.3000e-02
+   1.3614e+00  -5.7000e-02
+   1.4312e+00  -5.3000e-02
+   1.5010e+00  -5.6000e-02
+   1.5708e+00  -8.0000e-02
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- cy += (b/(2*v))*cy_r*r -->
+            <function name="aero/coefficient/CYr">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>aero/ci2vel</property>
+                    <property>velocities/r-aero-rad_sec</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01   1.5450e-01
+  -1.7453e-01   1.5450e-01
+  -1.0472e-01   1.5450e-01
+  -3.4907e-02   1.6600e-01
+   3.4907e-02   1.9275e-01
+   1.0472e-01   2.2600e-01
+   1.7453e-01   2.5550e-01
+   2.4435e-01   2.1900e-01
+   3.1416e-01   7.0250e-02
+   3.8397e-01  -9.2500e-02
+   4.5379e-01  -1.9850e-01
+   5.2360e-01  -2.6750e-01
+   5.9341e-01  -3.0750e-01
+   6.6323e-01  -3.2500e-01
+   7.3304e-01  -2.2300e-01
+   8.0285e-01   2.0000e-03
+   8.7266e-01   2.9000e-01
+   9.4248e-01   2.9000e-01
+   1.0123e+00   2.3600e-01
+   1.0821e+00   1.6000e-01
+   1.1519e+00   9.2000e-02
+   1.2217e+00   6.0000e-02
+   1.2915e+00   4.8000e-02
+   1.3614e+00   3.6000e-02
+   1.4312e+00   2.8000e-02
+   1.5010e+00   2.4000e-02
+   1.5708e+00   2.0000e-02
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- cy += cy_dal*dal -->
+            <function name="aero/coefficient/CYdal">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/aileron-pos-diff-deg</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01  -5.7740e-04
+  -1.7453e-01  -5.7740e-04
+  -1.0472e-01  -5.7740e-04
+  -3.4907e-02  -5.4624e-04
+   3.4907e-02  -4.6049e-04
+   1.0472e-01  -4.0675e-04
+   1.7453e-01  -4.1618e-04
+   2.4435e-01  -3.7045e-04
+   3.1416e-01  -1.9552e-04
+   3.8397e-01   4.5163e-05
+   4.5379e-01   2.6383e-04
+   5.2360e-01   4.7392e-04
+   5.9341e-01   6.3885e-04
+   6.6323e-01   7.0974e-04
+   7.3304e-01   6.5034e-04
+   8.0285e-01   1.9934e-04
+   8.7266e-01  -1.0062e-04
+   9.4248e-01  -1.4818e-04
+   1.0123e+00  -1.7448e-04
+   1.0821e+00  -1.9574e-04
+   1.1519e+00  -2.1872e-04
+   1.2217e+00  -2.4068e-04
+   1.2915e+00  -2.7818e-04
+   1.3614e+00  -3.0642e-04
+   1.4312e+00  -3.2860e-04
+   1.5010e+00  -3.4758e-04
+   1.5708e+00  -3.6587e-04
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- cy += cy_del*del -->
+            <function name="aero/coefficient/CYdel">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/left-stabilator-pos-deg</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01  -1.2183e-03
+  -1.7453e-01  -1.2183e-03
+  -1.0472e-01  -1.2183e-03
+  -3.4907e-02  -1.1854e-03
+   3.4907e-02  -1.0860e-03
+   1.0472e-01  -9.6915e-04
+   1.7453e-01  -8.6226e-04
+   2.4435e-01  -7.0281e-04
+   3.1416e-01  -4.9889e-04
+   3.8397e-01  -2.8880e-04
+   4.5379e-01  -4.9950e-05
+   5.2360e-01   2.0627e-04
+   5.9341e-01   4.2749e-04
+   6.6323e-01   5.9145e-04
+   7.3304e-01   7.2557e-04
+   8.0285e-01   8.5657e-04
+   8.7266e-01   1.0053e-03
+   9.4248e-01   1.1312e-03
+   1.0123e+00   1.2283e-03
+   1.0821e+00   1.3040e-03
+   1.1519e+00   1.2967e-03
+   1.2217e+00   1.0764e-03
+   1.2915e+00   5.0495e-04
+   1.3614e+00  -4.5420e-05
+   1.4312e+00  -5.6997e-04
+   1.5010e+00  -1.0013e-03
+   1.5708e+00  -1.2094e-03
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- cy += cy_der*der -->
+            <function name="aero/coefficient/CYder">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/right-stabilator-pos-deg</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+
+  -2.4435e-01   1.2183e-03
+  -1.7453e-01   1.2183e-03
+  -1.0472e-01   1.2183e-03
+  -3.4907e-02   1.1854e-03
+   3.4907e-02   1.0860e-03
+   1.0472e-01   9.6915e-04
+   1.7453e-01   8.6226e-04
+   2.4435e-01   7.0281e-04
+   3.1416e-01   4.9889e-04
+   3.8397e-01   2.8880e-04
+   4.5379e-01   4.9950e-05
+   5.2360e-01  -2.0627e-04
+   5.9341e-01  -4.2749e-04
+   6.6323e-01  -5.9145e-04
+   7.3304e-01  -7.2557e-04
+   8.0285e-01  -8.5657e-04
+   8.7266e-01  -1.0053e-03
+   9.4248e-01  -1.1312e-03
+   1.0123e+00  -1.2283e-03
+   1.0821e+00  -1.3040e-03
+   1.1519e+00  -1.2967e-03
+   1.2217e+00  -1.0764e-03
+   1.2915e+00  -5.0495e-04
+   1.3614e+00   4.5421e-05
+   1.4312e+00   5.6997e-04
+   1.5010e+00   1.0013e-03
+   1.5708e+00   1.2094e-03
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- cy += cy_dr*dr -->
+            <function name="aero/coefficient/CYdr">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/rudder-pos-rad</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01   1.9852e-01
+  -1.7453e-01   1.9852e-01
+  -1.0472e-01   1.9852e-01
+  -3.4907e-02   2.0225e-01
+   3.4907e-02   2.1017e-01
+   1.0472e-01   2.1390e-01
+   1.7453e-01   2.1017e-01
+   2.4435e-01   1.9852e-01
+   3.1416e-01   1.7662e-01
+   3.8397e-01   1.4772e-01
+   4.5379e-01   1.2116e-01
+   5.2360e-01   1.0299e-01
+   5.9341e-01   9.1337e-02
+   6.6323e-01   8.4347e-02
+   7.3304e-01   8.6491e-02
+   8.0285e-01   9.1542e-02
+   8.7266e-01   8.4906e-02
+   9.4248e-01   7.2082e-02
+   1.0123e+00   5.9872e-02
+   1.0821e+00   5.5734e-02
+   1.1519e+00   6.0040e-02
+   1.2217e+00   6.6080e-02
+   1.2915e+00   6.3097e-02
+   1.3614e+00   5.8158e-02
+   1.4312e+00   6.0021e-02
+   1.5010e+00   6.6043e-02
+   1.5708e+00   6.2165e-02
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+        </axis>
+
+        <axis name="LIFT">
+   <!-- The values here are taken from MATLAB files from the
+        FA-18 HARV which can be found at
+
+         http://www.dfrc.nasa.gov/Research/HARV/Work/NASA2/nasa2.html
+
+        The lift axis is here given by the equation
+
+         clift = clift0 + (cbar/(2*v))*clift_q*q + clift_del*del + clift_der*der;
+
+        where cbar and v have the usual meaning. The pitch rate is denoted by q
+        and the stabilizer positions of the left and right stabilizer are denoted by
+        del respectivly der in the above equation. All angles and angular rates
+        are in degree.
+
+        Below are the original tables like they are found in the matlab files
+
+ALPHA_BREAK = [      -14.0000  -10.00000   -6.00000   -2.00000    2.00000    6.00000 ...
+   10.00000    14.0000    18.0000    22.0000    26.0000    30.0000    34.0000 ...
+    38.0000    42.0000    46.0000    50.0000    54.0000    58.0000    62.0000 ...
+    66.0000    70.0000    74.0000    78.0000    82.0000    86.0000    90.0000]';
+
+%
+% here is clift0
+%
+clift0 = [ -1.03860  -0.880907  -0.551318  -0.216206   0.154461   0.560857 ...
+            0.951575    1.24168    1.39786    1.53103    1.64110    1.77724    1.88652 ...
+            1.88940    1.80975    1.68556    1.57524    1.46011    1.31884    1.17117 ...
+            1.02151   0.858875   0.685334   0.529482   0.378268   0.229349    9.10933E-02 ]';
+%
+% here is clift_q
+%
+clift_q = [ 7.87143E-02    7.87143E-02    7.87144E-02    7.88452E-02    7.64891E-02 ...
+            6.91587E-02    6.33554E-02    5.99084E-02    5.89049E-02    6.05629E-02 ...
+            6.28755E-02    6.91587E-02    8.89245E-02    0.119991   0.147829   0.159698 ...
+            0.131772       1.03847E-01    9.21534E-02    8.79646E-02    8.63938E-02    8.63938E-02 ...
+            8.49975E-02    8.25541E-02    7.97615E-02    7.66200E-02    7.24312E-02]';
+%
+% here is clift_del
+%
+clift_del = [ 5.03735E-03    5.30820E-03    5.80124E-03    6.25003E-03    6.76123E-03 ...
+              7.18902E-03    7.15986E-03    6.87948E-03    6.62941E-03    6.28904E-03 ...
+              5.97515E-03    5.90878E-03    5.86386E-03    5.55871E-03    4.76025E-03 ...
+              3.56060E-03    2.26618E-03    1.55859E-03    1.04476E-03    5.88013E-04 ...
+              1.18163E-04   -3.68531E-04   -1.10325E-03   -1.79305E-03   -2.27413E-03 ...
+             -2.48706E-03   -2.47676E-03]';
+%
+% here is clift_der
+%
+clift_der = [ 5.03735E-03    5.30820E-03    5.80124E-03    6.25003E-03    6.76123E-03 ...
+              7.18902E-03    7.15986E-03    6.87948E-03    6.62941E-03    6.28904E-03 ...
+              5.97515E-03    5.90878E-03    5.86386E-03    5.55871E-03    4.76025E-03 ...
+              3.56060E-03    2.26618E-03    1.55859E-03    1.04476E-03    5.88013E-04 ...
+              1.18163E-04   -3.68531E-04   -1.10325E-03   -1.79305E-03   -2.27413E-03 ...
+             -2.48706E-03   -2.47676E-03]';
+
+   -->
+            <function name="aero/coefficient/CLalpha">
+                <description>Lift_due_to_alpha</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+    -0.2443460 -1.03860
+    -0.1745329 -0.880907
+    -0.1047197 -0.551318
+    -0.0349065 -0.216206
+     0.0349065  0.154461
+     0.1047197  0.560857
+     0.1745329  0.951575
+     0.2443460  1.24168
+     0.3141592  1.39786
+     0.3839724  1.53103
+     0.4537856  1.64110
+     0.5235987  1.77724
+     0.5934119  1.88652
+     0.6632251  1.88940
+     0.7330382  1.80975
+     0.8028514  1.68556
+     0.8726646  1.57524
+     0.9424777  1.46011
+     1.0122909  1.31884
+     1.0821041  1.17117
+     1.1519173  1.02151
+     1.2217304  0.858875
+     1.2915436  0.685334
+     1.3613568  0.529482
+     1.4311699  0.378268
+     1.5009831  0.229349
+     1.5707963  0.0910933
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+            <function name="aero/coefficient/CLqalpha">
+                <description>Lift_due_to_alpha_and_pitch_rate</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>aero/ci2vel</property>
+                    <property>velocities/q-aero-rad_sec</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+    -0.2443460 4.51
+    -0.1745329 4.51
+    -0.1047197 4.51
+    -0.0349065 4.5175
+     0.0349065 4.3825
+     0.1047197 3.9625
+     0.1745329 3.63
+     0.2443460 3.4325
+     0.3141592 3.375
+     0.3839724 3.47
+     0.4537856 3.6025
+     0.5235987 3.9625
+     0.5934119 5.095
+     0.6632251 6.875
+     0.7330382 8.47
+     0.8028514 9.15
+     0.8726646 7.55
+     0.9424777 5.95
+     1.0122909 5.28
+     1.0821041 5.04
+     1.1519173 4.95
+     1.2217304 4.95
+     1.2915436 4.87
+     1.3613568 4.73
+     1.4311699 4.57
+     1.5009831 4.39
+     1.5707963 4.15
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+            <function name="aero/coefficient/CLder">
+                <description>Lift_due_to_right_stabilizer</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/right-stabilator-pos-deg</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+    -0.2443460 5.03735E-03
+    -0.1745329 5.30820E-03
+    -0.1047197 5.80124E-03
+    -0.0349065 6.25003E-03
+     0.0349065 6.76123E-03
+     0.1047197 7.18902E-03
+     0.1745329 7.15986E-03
+     0.2443460 6.87948E-03
+     0.3141592 6.62941E-03
+     0.3839724 6.28904E-03
+     0.4537856 5.97515E-03
+     0.5235987 5.90878E-03
+     0.5934119 5.86386E-03
+     0.6632251 5.55871E-03
+     0.7330382 4.76025E-03
+     0.8028514 3.56060E-03
+     0.8726646 2.26618E-03
+     0.9424777 1.55859E-03
+     1.0122909 1.04476E-03
+     1.0821041 5.88013E-04
+     1.1519173 1.18163E-04
+     1.2217304 -3.68531E-04
+     1.2915436 -1.10325E-03
+     1.3613568 -1.79305E-03
+     1.4311699 -2.27413E-03
+     1.5009831 -2.48706E-03
+     1.5707963 -2.47676E-03
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+            <function name="aero/coefficient/CLdel">
+                <description>Lift_due_to_left_stabilizer</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/left-stabilator-pos-deg</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+     -0.2443460 5.03735E-03
+     -0.1745329 5.30820E-03
+     -0.1047197 5.80124E-03
+     -0.0349065 6.25003E-03
+      0.0349065 6.76123E-03
+      0.1047197 7.18902E-03
+      0.1745329 7.15986E-03
+      0.2443460 6.87948E-03
+      0.3141592 6.62941E-03
+      0.3839724 6.28904E-03
+      0.4537856 5.97515E-03
+      0.5235987 5.90878E-03
+      0.5934119 5.86386E-03
+      0.6632251 5.55871E-03
+      0.7330382 4.76025E-03
+      0.8028514 3.56060E-03
+      0.8726646 2.26618E-03
+      0.9424777 1.55859E-03
+      1.0122909 1.04476E-03
+      1.0821041 5.88013E-04
+      1.1519173 1.18163E-04
+      1.2217304 -3.68531E-04
+      1.2915436 -1.10325E-03
+      1.3613568 -1.79305E-03
+      1.4311699 -2.27413E-03
+      1.5009831 -2.48706E-03
+      1.5707963 -2.47676E-03
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+   <!-- Don't know much about that ... -->
+            <function name="aero/coefficient/dCLflap">
+                <description>Delta_Lift_due_to_flaps</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/flap-pos-norm</property>
+                    <value>0.6500</value>
+                </product>
+            </function>
+   <!-- Don't know much about that, but I guess that the speedbrake will
+        most propable induce negative lift since it is only on the upper
+        side of the FA-18  ... -->
+            <function name="aero/coefficient/dCLsb">
+                <description>Delta_Lift_due_to_speedbrake</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/speedbrake-pos-norm</property>
+                    <value>-0.0500</value>
+                </product>
+            </function>
+        </axis>
+
+        <axis name="ROLL">
+   <!-- The values here are taken from MATLAB files from the
+        FA-18 HARV which can be found at
+
+         http://www.dfrc.nasa.gov/Research/HARV/Work/NASA2/nasa2.html
+
+        The lift axis is here given by the equation
+
+         croll = croll_b*bta + (b/(2*v))*croll_p*p + (b/(2*v))*croll_r*r ... 
+                 + croll_dal*dal + croll_del*del + croll_der*der + croll_dr*dr;
+
+        where bta, cbar and v have the usual meaning. The roll rate is denoted by p,
+        the yaw rate is r. Aileron positions are given by dal, rudder position is dr
+        and the stabilizer positions of the left and right stabilizer are denoted by
+        del respectivly der in the above equation. All angles and angular rates
+        are in degree.
+
+        Below are the original tables like they are found in the matlab files
+
+ALPHA_BREAK = [      -14.0000  -10.00000   -6.00000   -2.00000    2.00000    6.00000 ...
+   10.00000    14.0000    18.0000    22.0000    26.0000    30.0000    34.0000 ...
+    38.0000    42.0000    46.0000    50.0000    54.0000    58.0000    62.0000 ...
+    66.0000    70.0000    74.0000    78.0000    82.0000    86.0000    90.0000]';
+
+%
+% here is croll_b
+%
+croll_b = [ -3.70196E-05   -3.70196E-05   -4.41520E-04   -8.46019E-04   -1.27065E-03 ...
+           -1.70123E-03   -2.11290E-03   -2.77077E-03   -3.37291E-03   -3.47757E-03 ...
+           -3.16486E-03   -2.35754E-03   -1.22554E-03   -1.14567E-03   -1.63756E-03 ...
+           -2.22957E-03   -2.45882E-03   -2.47686E-03   -2.44493E-03   -2.51646E-03 ...
+           -2.70976E-03   -2.90803E-03   -2.82658E-03   -2.75756E-03   -2.70552E-03 ...
+           -2.67292E-03   -2.66024E-03]'; 
+%
+% here is croll_p
+%
+croll_p = [ -7.05113E-03   -7.05113E-03   -7.05113E-03   -7.05113E-03   -7.05113E-03 ...
+           -7.05113E-03   -6.24828E-03   -5.25344E-03   -4.62512E-03   -3.85718E-03 ...
+           -5.38434E-03   -7.94125E-03   -8.68301E-03   -8.72665E-03   -4.88692E-03 ...
+            3.49064E-05   -3.31613E-03   -3.73500E-03   -4.04916E-03   -4.36332E-03 ...
+           -4.67748E-03   -4.88692E-03   -5.02655E-03   -5.16617E-03   -5.30580E-03 ...
+           -5.41052E-03   -5.41052E-03]';
+%
+% here is croll_r
+%
+croll_r = [ 2.14676E-04    2.14676E-04    2.14676E-04    5.85558E-04    1.52804E-03 ...
+            2.57087E-03    3.39117E-03    3.84496E-03    3.98895E-03    4.11549E-03 ...
+            4.43401E-03    5.18886E-03    5.68192E-03    5.06669E-03    4.07360E-03 ...
+            3.28122E-03    2.56214E-03    2.18515E-03    1.86052E-03    1.58127E-03 ...
+            1.33692E-03    1.11352E-03    1.12748E-03    1.13097E-03    9.28515E-04 ...
+            5.34071E-04    1.71042E-04]';
+%
+% here is croll_da
+%
+croll_da = [ 1.16543E-03    1.16543E-03    1.16543E-03    1.16686E-03    1.17021E-03 ...
+            1.17426E-03    1.14013E-03    1.04034E-03    8.40294E-04    6.31892E-04 ...
+            5.23513E-04    4.56671E-04    3.86010E-04    3.20124E-04    2.81594E-04 ...
+            2.56481E-04    2.33946E-04    2.11792E-04    1.97660E-04    1.86966E-04 ...
+            1.74839E-04    1.56123E-04    9.61564E-05    5.02267E-05    1.77607E-05 ...
+           -6.65660E-23   -7.15216E-23]'; ...
+%
+% here is croll_del
+%
+croll_del = [5.65136E-04    5.65136E-04    5.65136E-04    5.80368E-04    6.12176E-04 ...
+            6.47732E-04    6.78982E-04    6.89279E-04    6.85958E-04    6.90546E-04 ...
+            6.99129E-04    6.97942E-04    6.82421E-04    6.50934E-04    5.94802E-04 ...
+            5.18515E-04    4.32725E-04    3.44090E-04    2.67459E-04    2.01739E-04 ...
+            1.42504E-04    8.19937E-05    2.43887E-05   -5.32750E-06   -2.92725E-05 ...
+           -5.58400E-05   -7.97000E-05]';
+%
+% here is croll_der
+%
+croll_der = [-5.65136E-04   -5.65136E-04   -5.65136E-04   -5.80368E-04   -6.12176E-04 ...
+           -6.47732E-04   -6.78982E-04   -6.89279E-04   -6.85958E-04   -6.90546E-04 ...
+           -6.99129E-04   -6.97942E-04   -6.82421E-04   -6.50934E-04   -5.94802E-04 ...
+           -5.18515E-04   -4.32725E-04   -3.44090E-04   -2.67459E-04   -2.01739E-04 ...
+           -1.42504E-04   -8.19937E-05   -2.43887E-05    5.32750E-06    2.92725E-05 ...
+            5.58400E-05    7.97000E-05]'; 
+%
+% here is croll_dr
+%
+croll_dr = [ 2.86293E-04    2.86293E-04    2.86293E-04    2.69213E-04    2.39120E-04 ...
+            2.18787E-04    2.10653E-04    2.07400E-04    1.80560E-04    1.24440E-04 ...
+            6.91333E-05    3.49733E-05    1.87067E-05    4.88000E-06   -3.44528E-05 ...
+           -8.67339E-05   -1.08661E-04   -7.83403E-05   -2.63520E-05    3.68277E-05 ...
+            9.48021E-05    1.25253E-04    9.58432E-05    7.66811E-05    6.73115E-05 ...
+            6.47088E-05    6.32773E-05]';
+
+   -->
+
+    <!-- croll += croll_b*bta -->
+            <function name="aero/coefficient/Crollb">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/bw-ft</property>
+                    <property>aero/beta-rad</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01  -2.1211e-03
+  -1.7453e-01  -2.1211e-03
+  -1.0472e-01  -2.5297e-02
+  -3.4907e-02  -4.8473e-02
+   3.4907e-02  -7.2803e-02
+   1.0472e-01  -9.7473e-02
+   1.7453e-01  -1.2106e-01
+   2.4435e-01  -1.5875e-01
+   3.1416e-01  -1.9325e-01
+   3.8397e-01  -1.9925e-01
+   4.5379e-01  -1.8133e-01
+   5.2360e-01  -1.3508e-01
+   5.9341e-01  -7.0218e-02
+   6.6323e-01  -6.5642e-02
+   7.3304e-01  -9.3825e-02
+   8.0285e-01  -1.2774e-01
+   8.7266e-01  -1.4088e-01
+   9.4248e-01  -1.4191e-01
+   1.0123e+00  -1.4008e-01
+   1.0821e+00  -1.4418e-01
+   1.1519e+00  -1.5526e-01
+   1.2217e+00  -1.6662e-01
+   1.2915e+00  -1.6195e-01
+   1.3614e+00  -1.5800e-01
+   1.4312e+00  -1.5501e-01
+   1.5010e+00  -1.5315e-01
+   1.5708e+00  -1.5242e-01
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- croll += (b/(2*v))*croll_p*p -->
+            <function name="aero/coefficient/Crollp">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/bw-ft</property>
+                    <property>aero/bi2vel</property>
+                    <property>velocities/p-aero-rad_sec</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01  -4.0400e-01
+  -1.7453e-01  -4.0400e-01
+  -1.0472e-01  -4.0400e-01
+  -3.4907e-02  -4.0400e-01
+   3.4907e-02  -4.0400e-01
+   1.0472e-01  -4.0400e-01
+   1.7453e-01  -3.5800e-01
+   2.4435e-01  -3.0100e-01
+   3.1416e-01  -2.6500e-01
+   3.8397e-01  -2.2100e-01
+   4.5379e-01  -3.0850e-01
+   5.2360e-01  -4.5500e-01
+   5.9341e-01  -4.9750e-01
+   6.6323e-01  -5.0000e-01
+   7.3304e-01  -2.8000e-01
+   8.0285e-01   2.0000e-03
+   8.7266e-01  -1.9000e-01
+   9.4248e-01  -2.1400e-01
+   1.0123e+00  -2.3200e-01
+   1.0821e+00  -2.5000e-01
+   1.1519e+00  -2.6800e-01
+   1.2217e+00  -2.8000e-01
+   1.2915e+00  -2.8800e-01
+   1.3614e+00  -2.9600e-01
+   1.4312e+00  -3.0400e-01
+   1.5010e+00  -3.1000e-01
+   1.5708e+00  -3.1000e-01
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- croll += (b/(2*v))*croll_r*r -->
+            <function name="aero/coefficient/Crollr">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/bw-ft</property>
+                    <property>aero/bi2vel</property>
+                    <property>velocities/r-aero-rad_sec</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01   1.2300e-02
+  -1.7453e-01   1.2300e-02
+  -1.0472e-01   1.2300e-02
+  -3.4907e-02   3.3550e-02
+   3.4907e-02   8.7550e-02
+   1.0472e-01   1.4730e-01
+   1.7453e-01   1.9430e-01
+   2.4435e-01   2.2030e-01
+   3.1416e-01   2.2855e-01
+   3.8397e-01   2.3580e-01
+   4.5379e-01   2.5405e-01
+   5.2360e-01   2.9730e-01
+   5.9341e-01   3.2555e-01
+   6.6323e-01   2.9030e-01
+   7.3304e-01   2.3340e-01
+   8.0285e-01   1.8800e-01
+   8.7266e-01   1.4680e-01
+   9.4248e-01   1.2520e-01
+   1.0123e+00   1.0660e-01
+   1.0821e+00   9.0600e-02
+   1.1519e+00   7.6600e-02
+   1.2217e+00   6.3800e-02
+   1.2915e+00   6.4600e-02
+   1.3614e+00   6.4800e-02
+   1.4312e+00   5.3200e-02
+   1.5010e+00   3.0600e-02
+   1.5708e+00   9.8000e-03
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- croll += croll_dal*dal -->
+            <function name="aero/coefficient/Crollal">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/bw-ft</property>
+                    <property>fcs/aileron-pos-diff-deg</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01   1.1654e-03
+  -1.7453e-01   1.1654e-03
+  -1.0472e-01   1.1654e-03
+  -3.4907e-02   1.1669e-03
+   3.4907e-02   1.1702e-03
+   1.0472e-01   1.1743e-03
+   1.7453e-01   1.1401e-03
+   2.4435e-01   1.0403e-03
+   3.1416e-01   8.4029e-04
+   3.8397e-01   6.3189e-04
+   4.5379e-01   5.2351e-04
+   5.2360e-01   4.5667e-04
+   5.9341e-01   3.8601e-04
+   6.6323e-01   3.2012e-04
+   7.3304e-01   2.8159e-04
+   8.0285e-01   2.5648e-04
+   8.7266e-01   2.3395e-04
+   9.4248e-01   2.1179e-04
+   1.0123e+00   1.9766e-04
+   1.0821e+00   1.8697e-04
+   1.1519e+00   1.7484e-04
+   1.2217e+00   1.5612e-04
+   1.2915e+00   9.6156e-05
+   1.3614e+00   5.0227e-05
+   1.4312e+00   1.7761e-05
+   1.5010e+00  -6.6566e-23
+   1.5708e+00  -7.1522e-23
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- croll += croll_del*del -->
+            <function name="aero/coefficient/Crollel">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/bw-ft</property>
+                    <property>fcs/left-stabilator-pos-deg</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01   5.6514e-04
+  -1.7453e-01   5.6514e-04
+  -1.0472e-01   5.6514e-04
+  -3.4907e-02   5.8037e-04
+   3.4907e-02   6.1218e-04
+   1.0472e-01   6.4773e-04
+   1.7453e-01   6.7898e-04
+   2.4435e-01   6.8928e-04
+   3.1416e-01   6.8596e-04
+   3.8397e-01   6.9055e-04
+   4.5379e-01   6.9913e-04
+   5.2360e-01   6.9794e-04
+   5.9341e-01   6.8242e-04
+   6.6323e-01   6.5093e-04
+   7.3304e-01   5.9480e-04
+   8.0285e-01   5.1851e-04
+   8.7266e-01   4.3273e-04
+   9.4248e-01   3.4409e-04
+   1.0123e+00   2.6746e-04
+   1.0821e+00   2.0174e-04
+   1.1519e+00   1.4250e-04
+   1.2217e+00   8.1994e-05
+   1.2915e+00   2.4389e-05
+   1.3614e+00  -5.3275e-06
+   1.4312e+00  -2.9273e-05
+   1.5010e+00  -5.5840e-05
+   1.5708e+00  -7.9700e-05
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- croll += croll_der*der -->
+            <function name="aero/coefficient/Croller">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/bw-ft</property>
+                    <property>fcs/right-stabilator-pos-deg</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01  -5.6514e-04
+  -1.7453e-01  -5.6514e-04
+  -1.0472e-01  -5.6514e-04
+  -3.4907e-02  -5.8037e-04
+   3.4907e-02  -6.1218e-04
+   1.0472e-01  -6.4773e-04
+   1.7453e-01  -6.7898e-04
+   2.4435e-01  -6.8928e-04
+   3.1416e-01  -6.8596e-04
+   3.8397e-01  -6.9055e-04
+   4.5379e-01  -6.9913e-04
+   5.2360e-01  -6.9794e-04
+   5.9341e-01  -6.8242e-04
+   6.6323e-01  -6.5093e-04
+   7.3304e-01  -5.9480e-04
+   8.0285e-01  -5.1851e-04
+   8.7266e-01  -4.3273e-04
+   9.4248e-01  -3.4409e-04
+   1.0123e+00  -2.6746e-04
+   1.0821e+00  -2.0174e-04
+   1.1519e+00  -1.4250e-04
+   1.2217e+00  -8.1994e-05
+   1.2915e+00  -2.4389e-05
+   1.3614e+00   5.3275e-06
+   1.4312e+00   2.9273e-05
+   1.5010e+00   5.5840e-05
+   1.5708e+00   7.9700e-05
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- croll += croll_dr*dr -->
+            <function name="aero/coefficient/Crollrudder">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/bw-ft</property>
+                    <property>fcs/rudder-pos-rad</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01   1.6403e-02
+  -1.7453e-01   1.6403e-02
+  -1.0472e-01   1.6403e-02
+  -3.4907e-02   1.5425e-02
+   3.4907e-02   1.3701e-02
+   1.0472e-01   1.2536e-02
+   1.7453e-01   1.2070e-02
+   2.4435e-01   1.1883e-02
+   3.1416e-01   1.0345e-02
+   3.8397e-01   7.1299e-03
+   4.5379e-01   3.9610e-03
+   5.2360e-01   2.0038e-03
+   5.9341e-01   1.0718e-03
+   6.6323e-01   2.7960e-04
+   7.3304e-01  -1.9740e-03
+   8.0285e-01  -4.9695e-03
+   8.7266e-01  -6.2258e-03
+   9.4248e-01  -4.4886e-03
+   1.0123e+00  -1.5099e-03
+   1.0821e+00   2.1101e-03
+   1.1519e+00   5.4318e-03
+   1.2217e+00   7.1765e-03
+   1.2915e+00   5.4914e-03
+   1.3614e+00   4.3935e-03
+   1.4312e+00   3.8567e-03
+   1.5010e+00   3.7075e-03
+   1.5708e+00   3.6255e-03
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+        </axis>
+
+        <axis name="PITCH">
+   <!-- The values here are taken from MATLAB files from the
+        FA-18 HARV which can be found at
+
+         http://www.dfrc.nasa.gov/Research/HARV/Work/NASA2/nasa2.html
+
+        The lift axis is here given by the equation
+
+         cm = cm0 + (cbar/(2*v))*cm_q*q + cm_del*del + cm_der*der;
+
+        where bta, cbar and v have the usual meaning. The roll rate is denoted by p,
+        the yaw rate is r. Aileron positions are given by dal, rudder position is dr
+        and the stabilizer positions of the left and right stabilizer are denoted by
+        del respectivly der in the above equation. All angles and angular rates
+        are in degree.
+
+        Below are the original tables like they are found in the matlab files
+
+ALPHA_BREAK = [      -14.0000  -10.00000   -6.00000   -2.00000    2.00000    6.00000 ...
+   10.00000    14.0000    18.0000    22.0000    26.0000    30.0000    34.0000 ...
+    38.0000    42.0000    46.0000    50.0000    54.0000    58.0000    62.0000 ...
+    66.0000    70.0000    74.0000    78.0000    82.0000    86.0000    90.0000]';
+
+%
+ % here is cm0
+ %
+ cm0 = [9.62520E-02    8.07290E-02    5.54066E-02    2.80686E-02    5.08503E-03 ...
+            -6.61034E-03   -1.64371E-02   -1.60245E-02   -5.86329E-02   -8.42348E-02 ...
+            -8.52663E-02  -0.105573  -0.117061  -0.110115  -0.114069  -0.118398   -1.01818E-01 ...
+           -0.146057  -0.228343  -0.351592  -0.426319  -0.476887  -0.601749  -0.563499 ...
+           -0.547688  -0.570013  -0.588038]'; 
+ %
+ % here is cm_q
+ %
+ cm_q = [   -8.68301E-02   -8.68301E-02   -8.68301E-02   -8.65683E-02   -8.53902E-02 ...
+            -8.08524E-02   -7.57473E-02   -7.23875E-02   -7.56600E-02   -8.29032E-02 ...
+            -8.81828E-02   -1.02364E-01  -0.147655  -0.205556  -0.132732    1.80642E-02 ...
+             4.31969E-02    1.80642E-02   -1.96350E-02   -6.50135E-02   -1.00967E-01 ...
+            -9.81748E-02   -9.53822E-02   -9.25897E-02   -8.90991E-02   -8.52593E-02 ...
+            -8.24668E-02]';
+ %
+ % here is cm_del
+ %
+ cm_del = [-6.46703E-03   -6.58967E-03   -6.83004E-03   -7.09553E-03   -7.45696E-03 ...
+            -7.82965E-03   -8.00920E-03   -8.04445E-03   -8.05054E-03   -8.00358E-03 ...
+            -7.99808E-03   -7.98872E-03   -7.79706E-03   -7.35454E-03   -6.39032E-03 ...
+            -5.05660E-03   -3.75061E-03   -3.37707E-03   -3.03092E-03   -2.32363E-03 ...
+            -1.37503E-03   -8.13315E-04   -7.80549E-04   -1.77291E-03   -2.35148E-03 ...
+            -2.35499E-03   -2.89985E-03]';
+ %
+ % here is cm_der
+ %
+ cm_der = [ -6.46703E-03   -6.58967E-03   -6.83004E-03   -7.09553E-03   -7.45696E-03 ...
+            -7.82965E-03   -8.00920E-03   -8.04445E-03   -8.05054E-03   -8.00358E-03 ...
+            -7.99808E-03   -7.98872E-03   -7.79706E-03   -7.35454E-03   -6.39032E-03 ...
+            -5.05660E-03   -3.75061E-03   -3.37707E-03   -3.03092E-03   -2.32363E-03 ...
+            -1.37503E-03   -8.13315E-04   -7.80549E-04   -1.77291E-03   -2.35148E-03 ...
+            -2.35499E-03   -2.89985E-03]';
+
+   -->
+    <!-- cm += cm0 -->
+            <function name="aero/coefficient/Cm0">
+                <description>Pitch_moment_due_to_alpha</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/cbarw-ft</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+       -2.4435e-01   9.6252e-02
+       -1.7453e-01   8.0729e-02
+       -1.0472e-01   5.5407e-02
+       -3.4907e-02   2.8069e-02
+        3.4907e-02   5.0850e-03
+        1.0472e-01  -6.6103e-03
+        1.7453e-01  -1.6437e-02
+        2.4435e-01  -1.6025e-02
+        3.1416e-01  -5.8633e-02
+        3.8397e-01  -8.4235e-02
+        4.5379e-01  -8.5266e-02
+        5.2360e-01  -1.0557e-01
+        5.9341e-01  -1.1706e-01
+        6.6323e-01  -1.1012e-01
+        7.3304e-01  -1.1407e-01
+        8.0285e-01  -1.1840e-01
+        8.7266e-01  -1.0182e-01
+        9.4248e-01  -1.4606e-01
+        1.0123e+00  -2.2834e-01
+        1.0821e+00  -3.5159e-01
+        1.1519e+00  -4.2632e-01
+        1.2217e+00  -4.7689e-01
+        1.2915e+00  -6.0175e-01
+        1.3614e+00  -5.6350e-01
+        1.4312e+00  -5.4769e-01
+        1.5010e+00  -5.7001e-01
+        1.5708e+00  -5.8804e-01
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- cm += (cbar/(2*v))*cm_q*q -->
+            <function name="aero/coefficient/Cm_q">
+                <description>Pitch_moment_due_to_pitch_rate</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/cbarw-ft</property>
+                    <property>aero/ci2vel</property>
+                    <property>velocities/q-aero-rad_sec</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01  -4.9750e+00
+  -1.7453e-01  -4.9750e+00
+  -1.0472e-01  -4.9750e+00
+  -3.4907e-02  -4.9600e+00
+   3.4907e-02  -4.8925e+00
+   1.0472e-01  -4.6325e+00
+   1.7453e-01  -4.3400e+00
+   2.4435e-01  -4.1475e+00
+   3.1416e-01  -4.3350e+00
+   3.8397e-01  -4.7500e+00
+   4.5379e-01  -5.0525e+00
+   5.2360e-01  -5.8650e+00
+   5.9341e-01  -8.4600e+00
+   6.6323e-01  -1.1777e+01
+   7.3304e-01  -7.6050e+00
+   8.0285e-01   1.0350e+00
+   8.7266e-01   2.4750e+00
+   9.4248e-01   1.0350e+00
+   1.0123e+00  -1.1250e+00
+   1.0821e+00  -3.7250e+00
+   1.1519e+00  -5.7850e+00
+   1.2217e+00  -5.6250e+00
+   1.2915e+00  -5.4650e+00
+   1.3614e+00  -5.3050e+00
+   1.4312e+00  -5.1050e+00
+   1.5010e+00  -4.8850e+00
+   1.5708e+00  -4.7250e+00
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- cm += cm_del*del -->
+            <function name="aero/coefficient/Cm_del">
+                <description>Pitch_moment_due_to_left_stabilizer</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/cbarw-ft</property>
+                    <property>fcs/left-stabilator-pos-deg</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01  -6.4670e-03
+  -1.7453e-01  -6.5897e-03
+  -1.0472e-01  -6.8300e-03
+  -3.4907e-02  -7.0955e-03
+   3.4907e-02  -7.4570e-03
+   1.0472e-01  -7.8297e-03
+   1.7453e-01  -8.0092e-03
+   2.4435e-01  -8.0444e-03
+   3.1416e-01  -8.0505e-03
+   3.8397e-01  -8.0036e-03
+   4.5379e-01  -7.9981e-03
+   5.2360e-01  -7.9887e-03
+   5.9341e-01  -7.7971e-03
+   6.6323e-01  -7.3545e-03
+   7.3304e-01  -6.3903e-03
+   8.0285e-01  -5.0566e-03
+   8.7266e-01  -3.7506e-03
+   9.4248e-01  -3.3771e-03
+   1.0123e+00  -3.0309e-03
+   1.0821e+00  -2.3236e-03
+   1.1519e+00  -1.3750e-03
+   1.2217e+00  -8.1332e-04
+   1.2915e+00  -7.8055e-04
+   1.3614e+00  -1.7729e-03
+   1.4312e+00  -2.3515e-03
+   1.5010e+00  -2.3550e-03
+   1.5708e+00  -2.8998e-03
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- cm += cm_der*der -->
+            <function name="aero/coefficient/Cm_der">
+                <description>Pitch_moment_due_to_right_stabilizer</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/cbarw-ft</property>
+                    <property>fcs/right-stabilator-pos-deg</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01  -6.4670e-03
+  -1.7453e-01  -6.5897e-03
+  -1.0472e-01  -6.8300e-03
+  -3.4907e-02  -7.0955e-03
+   3.4907e-02  -7.4570e-03
+   1.0472e-01  -7.8297e-03
+   1.7453e-01  -8.0092e-03
+   2.4435e-01  -8.0444e-03
+   3.1416e-01  -8.0505e-03
+   3.8397e-01  -8.0036e-03
+   4.5379e-01  -7.9981e-03
+   5.2360e-01  -7.9887e-03
+   5.9341e-01  -7.7971e-03
+   6.6323e-01  -7.3545e-03
+   7.3304e-01  -6.3903e-03
+   8.0285e-01  -5.0566e-03
+   8.7266e-01  -3.7506e-03
+   9.4248e-01  -3.3771e-03
+   1.0123e+00  -3.0309e-03
+   1.0821e+00  -2.3236e-03
+   1.1519e+00  -1.3750e-03
+   1.2217e+00  -8.1332e-04
+   1.2915e+00  -7.8055e-04
+   1.3614e+00  -1.7729e-03
+   1.4312e+00  -2.3515e-03
+   1.5010e+00  -2.3550e-03
+   1.5708e+00  -2.8998e-03
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+        </axis>
+
+        <axis name="YAW">
+   <!-- The values here are taken from MATLAB files from the
+        FA-18 HARV which can be found at
+
+         http://www.dfrc.nasa.gov/Research/HARV/Work/NASA2/nasa2.html
+
+        The lift axis is here given by the equation
+
+         cn = cn_b*bta + (b/(2*v))*cn_p*p + (b/(2*v))*cn_r*r ...
+              + cn_dal*dal + cn_del*del + cn_der*der + cn_dr*dr;
+
+        where bta, cbar and v have the usual meaning. The roll rate is denoted by p,
+        the yaw rate is r. Aileron positions are given by dal, rudder position is dr
+        and the stabilizer positions of the left and right stabilizer are denoted by
+        del respectivly der in the above equation. All angles and angular rates
+        are in degree.
+
+        Below are the original tables like they are found in the matlab files
+
+ALPHA_BREAK = [      -14.0000  -10.00000   -6.00000   -2.00000    2.00000    6.00000 ...
+   10.00000    14.0000    18.0000    22.0000    26.0000    30.0000    34.0000 ...
+    38.0000    42.0000    46.0000    50.0000    54.0000    58.0000    62.0000 ...
+    66.0000    70.0000    74.0000    78.0000    82.0000    86.0000    90.0000]';
+
+% here is cn_b
+%
+cn_b = [  1.42071E-03    1.42071E-03    1.52521E-03    1.62971E-03    1.65089E-03 ...
+          1.67084E-03    1.80024E-03    1.46016E-03    9.91781E-04    6.82316E-04 ...
+          1.75902E-04   -1.09086E-03   -1.11070E-03   -1.59428E-03   -1.88776E-03 ...
+         -1.76721E-03   -1.35917E-03   -1.52852E-03   -1.63273E-03   -1.59147E-03 ...
+         -1.44456E-03   -1.34440E-03   -1.47796E-03   -1.60891E-03   -1.69618E-03 ...
+         -1.72843E-03   -1.73807E-03]';
+%
+% here is cn_p
+%
+cn_p = [ -1.26406E-03   -1.26406E-03   -1.26406E-03   -1.23533E-03   -1.17787E-03 ...
+         -1.12041E-03   -9.39611E-04   -6.36739E-04   -2.47236E-04    1.00356E-04 ...
+          3.70882E-04    4.58149E-04    3.97062E-04    2.48709E-04    2.33874E-04 ...
+          4.18879E-04    6.98132E-04    9.77384E-04   -1.04720E-03   -1.60570E-03 ...
+         -3.24631E-04   -2.26893E-04   -1.44164E-03   -6.98132E-04   -8.81388E-14 ...
+         -9.39512E-14   -9.97960E-14]'; 
+%
+% here is cn_r
+%
+cn_r = [-3.11978E-03   -3.11978E-03   -3.11978E-03   -3.11105E-03   -3.10669E-03 ...
+        -3.12850E-03   -3.17650E-03   -3.27686E-03   -3.46448E-03   -3.97935E-03 ...
+        -4.62949E-03   -5.14872E-03   -5.53269E-03   -5.63741E-03   -5.53706E-03 ...
+        -5.23162E-03   -4.53349E-03   -3.97499E-03   -2.89288E-03   -1.70606E-03 ...
+        -6.93768E-04    4.36324E-06   -6.93769E-04   -2.64854E-03   -4.18443E-03 ...
+        -4.81274E-03   -5.23162E-03]';
+%
+% here is cn_da
+%
+cn_da = [ -8.69999E-06   -8.69999E-06   -8.69999E-06   -2.06625E-05   -3.45825E-05 ...
+          -3.93675E-05   -4.78500E-05   -6.15525E-05   -7.74300E-05   -1.02660E-04 ...
+          -1.32240E-04   -1.55512E-04   -1.72042E-04   -1.80090E-04   -1.97403E-04 ...
+          -2.05320E-04   -2.40120E-04   -2.69352E-04   -2.87796E-04   -3.02644E-04 ...
+          -1.09272E-04    2.45624E-12    8.35200E-05    1.59210E-04    2.21850E-04 ...
+           2.43600E-04    1.74000E-04]'; 
+%
+% here is cn_del
+%
+cn_del = [ 4.45020E-04    4.45020E-04    4.45020E-04    4.36729E-04    4.17690E-04 ...
+           3.94303E-04    3.58695E-04    2.82299E-04    1.66782E-04    6.38125E-05 ...
+          -7.86875E-06   -9.12188E-05   -2.04675E-04   -3.33137E-04   -4.30339E-04 ...
+          -4.76974E-04   -4.53709E-04   -5.23318E-04   -6.41640E-04   -7.97428E-04 ...
+          -9.85781E-04   -1.20466E-03   -1.53810E-03   -1.97276E-03   -2.31246E-03 ...
+          -2.51679E-03   -2.70661E-03]';
+%
+% here is cn_der
+%
+cn_der = [ -4.45020E-04   -4.45020E-04   -4.45020E-04   -4.36729E-04   -4.17690E-04 ...
+           -3.94303E-04   -3.58695E-04   -2.82299E-04   -1.66782E-04   -6.38125E-05 ...
+            7.86875E-06    9.12188E-05    2.04675E-04    3.33137E-04    4.62771E-04 ...
+            5.89670E-04    7.57910E-04    8.80937E-04    1.03114E-03    1.17862E-03 ...
+            1.32721E-03    1.51793E-03    1.84599E-03    2.19195E-03    2.41929E-03 ...
+            2.53951E-03    2.70661E-03]';
+%
+% here is cn_dr
+%
+cn_dr = [ -1.15493E-03   -1.15493E-03   -1.15493E-03   -1.16632E-03   -1.18177E-03 ...
+          -1.18259E-03   -1.15656E-03   -1.08336E-03   -9.58920E-04   -8.03573E-04 ...
+          -6.80760E-04   -6.18947E-04   -5.90480E-04   -5.80720E-04   -5.15533E-04 ...
+          -4.17092E-04   -3.72355E-04   -3.86914E-04   -3.85538E-04   -3.51603E-04 ...
+          -3.00387E-04   -2.75612E-04   -2.70873E-04   -3.22200E-04   -3.84710E-04 ...
+          -4.23059E-04   -4.16915E-04]';
+    -->
+
+    <!-- cn += cn_b*bta -->
+            <function name="aero/coefficient/Cn_b">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/bw-ft</property>
+                    <property>aero/beta-rad</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01   8.1401e-02
+  -1.7453e-01   8.1401e-02
+  -1.0472e-01   8.7388e-02
+  -3.4907e-02   9.3376e-02
+   3.4907e-02   9.4589e-02
+   1.0472e-01   9.5732e-02
+   1.7453e-01   1.0315e-01
+   2.4435e-01   8.3661e-02
+   3.1416e-01   5.6825e-02
+   3.8397e-01   3.9094e-02
+   4.5379e-01   1.0078e-02
+   5.2360e-01  -6.2502e-02
+   5.9341e-01  -6.3638e-02
+   6.6323e-01  -9.1346e-02
+   7.3304e-01  -1.0816e-01
+   8.0285e-01  -1.0125e-01
+   8.7266e-01  -7.7875e-02
+   9.4248e-01  -8.7578e-02
+   1.0123e+00  -9.3549e-02
+   1.0821e+00  -9.1185e-02
+   1.1519e+00  -8.2767e-02
+   1.2217e+00  -7.7028e-02
+   1.2915e+00  -8.4681e-02
+   1.3614e+00  -9.2184e-02
+   1.4312e+00  -9.7184e-02
+   1.5010e+00  -9.9032e-02
+   1.5708e+00  -9.9584e-02
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- cn += (b/(2*v))*cn_p*p -->
+            <function name="aero/coefficient/Cn_p">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/bw-ft</property>
+                    <property>aero/bi2vel</property>
+                    <property>velocities/p-aero-rad_sec</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01  -7.2425e-02
+  -1.7453e-01  -7.2425e-02
+  -1.0472e-01  -7.2425e-02
+  -3.4907e-02  -7.0779e-02
+   3.4907e-02  -6.7487e-02
+   1.0472e-01  -6.4195e-02
+   1.7453e-01  -5.3836e-02
+   2.4435e-01  -3.6482e-02
+   3.1416e-01  -1.4166e-02
+   3.8397e-01   5.7500e-03
+   4.5379e-01   2.1250e-02
+   5.2360e-01   2.6250e-02
+   5.9341e-01   2.2750e-02
+   6.6323e-01   1.4250e-02
+   7.3304e-01   1.3400e-02
+   8.0285e-01   2.4000e-02
+   8.7266e-01   4.0000e-02
+   9.4248e-01   5.6000e-02
+   1.0123e+00  -6.0000e-02
+   1.0821e+00  -9.2000e-02
+   1.1519e+00  -1.8600e-02
+   1.2217e+00  -1.3000e-02
+   1.2915e+00  -8.2600e-02
+   1.3614e+00  -4.0000e-02
+   1.4312e+00  -5.0500e-12
+   1.5010e+00  -5.3830e-12
+   1.5708e+00  -5.7179e-12
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- cn += (b/(2*v))*cn_r*r -->
+            <function name="aero/coefficient/Cn_r">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/bw-ft</property>
+                    <property>aero/bi2vel</property>
+                    <property>velocities/r-aero-rad_sec</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01  -1.7875e-01
+  -1.7453e-01  -1.7875e-01
+  -1.0472e-01  -1.7875e-01
+  -3.4907e-02  -1.7825e-01
+   3.4907e-02  -1.7800e-01
+   1.0472e-01  -1.7925e-01
+   1.7453e-01  -1.8200e-01
+   2.4435e-01  -1.8775e-01
+   3.1416e-01  -1.9850e-01
+   3.8397e-01  -2.2800e-01
+   4.5379e-01  -2.6525e-01
+   5.2360e-01  -2.9500e-01
+   5.9341e-01  -3.1700e-01
+   6.6323e-01  -3.2300e-01
+   7.3304e-01  -3.1725e-01
+   8.0285e-01  -2.9975e-01
+   8.7266e-01  -2.5975e-01
+   9.4248e-01  -2.2775e-01
+   1.0123e+00  -1.6575e-01
+   1.0821e+00  -9.7750e-02
+   1.1519e+00  -3.9750e-02
+   1.2217e+00   2.5000e-04
+   1.2915e+00  -3.9750e-02
+   1.3614e+00  -1.5175e-01
+   1.4312e+00  -2.3975e-01
+   1.5010e+00  -2.7575e-01
+   1.5708e+00  -2.9975e-01
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- cn += cn_dal*dal -->
+            <function name="aero/coefficient/Cn_dal">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/bw-ft</property>
+                    <property>fcs/aileron-pos-diff-deg</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01  -8.7000e-06
+  -1.7453e-01  -8.7000e-06
+  -1.0472e-01  -8.7000e-06
+  -3.4907e-02  -2.0663e-05
+   3.4907e-02  -3.4583e-05
+   1.0472e-01  -3.9367e-05
+   1.7453e-01  -4.7850e-05
+   2.4435e-01  -6.1553e-05
+   3.1416e-01  -7.7430e-05
+   3.8397e-01  -1.0266e-04
+   4.5379e-01  -1.3224e-04
+   5.2360e-01  -1.5551e-04
+   5.9341e-01  -1.7204e-04
+   6.6323e-01  -1.8009e-04
+   7.3304e-01  -1.9740e-04
+   8.0285e-01  -2.0532e-04
+   8.7266e-01  -2.4012e-04
+   9.4248e-01  -2.6935e-04
+   1.0123e+00  -2.8780e-04
+   1.0821e+00  -3.0264e-04
+   1.1519e+00  -1.0927e-04
+   1.2217e+00   2.4562e-12
+   1.2915e+00   8.3520e-05
+   1.3614e+00   1.5921e-04
+   1.4312e+00   2.2185e-04
+   1.5010e+00   2.4360e-04
+   1.5708e+00   1.7400e-04
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- cn += cn_del*del -->
+            <function name="aero/coefficient/Cn_del">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/bw-ft</property>
+                    <property>fcs/left-stabilator-pos-deg</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01   4.4502e-04
+  -1.7453e-01   4.4502e-04
+  -1.0472e-01   4.4502e-04
+  -3.4907e-02   4.3673e-04
+   3.4907e-02   4.1769e-04
+   1.0472e-01   3.9430e-04
+   1.7453e-01   3.5870e-04
+   2.4435e-01   2.8230e-04
+   3.1416e-01   1.6678e-04
+   3.8397e-01   6.3812e-05
+   4.5379e-01  -7.8687e-06
+   5.2360e-01  -9.1219e-05
+   5.9341e-01  -2.0468e-04
+   6.6323e-01  -3.3314e-04
+   7.3304e-01  -4.3034e-04
+   8.0285e-01  -4.7697e-04
+   8.7266e-01  -4.5371e-04
+   9.4248e-01  -5.2332e-04
+   1.0123e+00  -6.4164e-04
+   1.0821e+00  -7.9743e-04
+   1.1519e+00  -9.8578e-04
+   1.2217e+00  -1.2047e-03
+   1.2915e+00  -1.5381e-03
+   1.3614e+00  -1.9728e-03
+   1.4312e+00  -2.3125e-03
+   1.5010e+00  -2.5168e-03
+   1.5708e+00  -2.7066e-03
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- cn += cn_der*der -->
+            <function name="aero/coefficient/Cn_der">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/bw-ft</property>
+                    <property>fcs/right-stabilator-pos-deg</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01  -4.4502e-04
+  -1.7453e-01  -4.4502e-04
+  -1.0472e-01  -4.4502e-04
+  -3.4907e-02  -4.3673e-04
+   3.4907e-02  -4.1769e-04
+   1.0472e-01  -3.9430e-04
+   1.7453e-01  -3.5870e-04
+   2.4435e-01  -2.8230e-04
+   3.1416e-01  -1.6678e-04
+   3.8397e-01  -6.3812e-05
+   4.5379e-01   7.8687e-06
+   5.2360e-01   9.1219e-05
+   5.9341e-01   2.0468e-04
+   6.6323e-01   3.3314e-04
+   7.3304e-01   4.6277e-04
+   8.0285e-01   5.8967e-04
+   8.7266e-01   7.5791e-04
+   9.4248e-01   8.8094e-04
+   1.0123e+00   1.0311e-03
+   1.0821e+00   1.1786e-03
+   1.1519e+00   1.3272e-03
+   1.2217e+00   1.5179e-03
+   1.2915e+00   1.8460e-03
+   1.3614e+00   2.1919e-03
+   1.4312e+00   2.4193e-03
+   1.5010e+00   2.5395e-03
+   1.5708e+00   2.7066e-03
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+
+    <!-- cn += cn_dr*dr -->
+            <function name="aero/coefficient/Cn_dr">
+                <description>Side_force_due_to_beta</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/bw-ft</property>
+                    <property>fcs/rudder-pos-rad</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+  -2.4435e-01  -6.6173e-02
+  -1.7453e-01  -6.6173e-02
+  -1.0472e-01  -6.6173e-02
+  -3.4907e-02  -6.6825e-02
+   3.4907e-02  -6.7710e-02
+   1.0472e-01  -6.7757e-02
+   1.7453e-01  -6.6266e-02
+   2.4435e-01  -6.2072e-02
+   3.1416e-01  -5.4942e-02
+   3.8397e-01  -4.6041e-02
+   4.5379e-01  -3.9005e-02
+   5.2360e-01  -3.5463e-02
+   5.9341e-01  -3.3832e-02
+   6.6323e-01  -3.3273e-02
+   7.3304e-01  -2.9538e-02
+   8.0285e-01  -2.3898e-02
+   8.7266e-01  -2.1334e-02
+   9.4248e-01  -2.2169e-02
+   1.0123e+00  -2.2090e-02
+   1.0821e+00  -2.0145e-02
+   1.1519e+00  -1.7211e-02
+   1.2217e+00  -1.5791e-02
+   1.2915e+00  -1.5520e-02
+   1.3614e+00  -1.8461e-02
+   1.4312e+00  -2.2042e-02
+   1.5010e+00  -2.4239e-02
+   1.5708e+00  -2.3887e-02
+                          </tableData>
+                      </table>
+                </product>
+            </function>
+        </axis>
+    </aerodynamics>
+</fdm_config>

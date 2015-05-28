@@ -1,0 +1,495 @@
+<?xml version="1.0"?>
+<PropertyList>
+ <path>ddi-engines.ac</path>
+
+ <!-- The glass, it is included in the body. hide it here -->
+ <animation>
+  <type>select</type>
+  <object-name>Display</object-name>
+  <condition>
+   <greater-than>
+    <property>gear/gear[2]/position-norm</property>
+    <value>0</value>
+   </greater-than>
+  </condition>
+ </animation>
+
+ <!-- Left Inlet Temp -->
+ <!-- Right Inlet Temp -->
+
+ <!-- Left N1 -->
+ <animation>
+  <type>textranslate</type>
+  <object-name>LN1Ones</object-name>
+  <property>engines/engine[0]/N1</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>LN1Tens</object-name>
+  <property>engines/engine[0]/N1</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>LN1Hundreds</object-name>
+  <property>engines/engine[0]/N1</property>
+  <factor>0.001</factor>
+  <step>100</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <!-- Right N1 -->
+ <animation>
+  <type>textranslate</type>
+  <object-name>RN1Ones</object-name>
+  <property>engines/engine[1]/N1</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>RN1Tens</object-name>
+  <property>engines/engine[1]/N1</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>RN1Hundreds</object-name>
+  <property>engines/engine[1]/N1</property>
+  <factor>0.001</factor>
+  <step>100</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <!-- Left N2 -->
+ <animation>
+  <type>textranslate</type>
+  <object-name>LN2Ones</object-name>
+  <property>engines/engine[0]/N2</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>LN2Tens</object-name>
+  <property>engines/engine[0]/N2</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>LN2Hundreds</object-name>
+  <property>engines/engine[0]/N2</property>
+  <factor>0.001</factor>
+  <step>100</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <!-- Right N2 -->
+ <animation>
+  <type>textranslate</type>
+  <object-name>RN2Ones</object-name>
+  <property>engines/engine[1]/N2</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>RN2Tens</object-name>
+  <property>engines/engine[1]/N2</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>RN2Hundreds</object-name>
+  <property>engines/engine[1]/N2</property>
+  <factor>0.001</factor>
+  <step>100</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+
+ <!-- Left EGT -->
+ <animation>
+  <type>textranslate</type>
+  <object-name>LEGTOnes</object-name>
+  <property>engines/engine[0]/EGT_degC</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>LEGTTens</object-name>
+  <property>engines/engine[0]/EGT_degC</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>LEGTHundreds</object-name>
+  <property>engines/engine[0]/EGT_degC</property>
+  <factor>0.001</factor>
+  <step>100</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>LEGTThousands</object-name>
+  <property>engines/engine[0]/EGT_degC</property>
+  <factor>0.0001</factor>
+  <step>1000</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <!-- Right EGT -->
+ <animation>
+  <type>textranslate</type>
+  <object-name>REGTOnes</object-name>
+  <property>engines/engine[1]/EGT_degC</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>REGTTens</object-name>
+  <property>engines/engine[1]/EGT_degC</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>REGTHundreds</object-name>
+  <property>engines/engine[1]/EGT_degC</property>
+  <factor>0.001</factor>
+  <step>100</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>REGTThousands</object-name>
+  <property>engines/engine[1]/EGT_degC</property>
+  <factor>0.0001</factor>
+  <step>1000</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <!-- Left FF -->
+ <animation>
+  <type>textranslate</type>
+  <object-name>LFFOnes</object-name>
+  <property>engines/engine[0]/fuel-flow_pph</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>LFFTens</object-name>
+  <property>engines/engine[0]/fuel-flow_pph</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>LFFHundreds</object-name>
+  <property>engines/engine[0]/fuel-flow_pph</property>
+  <factor>0.001</factor>
+  <step>100</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>LFFThousands</object-name>
+  <property>engines/engine[0]/fuel-flow_pph</property>
+  <factor>0.0001</factor>
+  <step>1000</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>LFFTenthousands</object-name>
+  <property>engines/engine[0]/fuel-flow_pph</property>
+  <factor>0.00001</factor>
+  <step>10000</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <!-- Right FF -->
+ <animation>
+  <type>textranslate</type>
+  <object-name>RFFOnes</object-name>
+  <property>engines/engine[1]/fuel-flow_pph</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>RFFTens</object-name>
+  <property>engines/engine[1]/fuel-flow_pph</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>RFFHundreds</object-name>
+  <property>engines/engine[1]/fuel-flow_pph</property>
+  <factor>0.001</factor>
+  <step>100</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>RFFThousands</object-name>
+  <property>engines/engine[1]/fuel-flow_pph</property>
+  <factor>0.0001</factor>
+  <step>1000</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>RFFTenthousands</object-name>
+  <property>engines/engine[1]/fuel-flow_pph</property>
+  <factor>0.00001</factor>
+  <step>10000</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+
+ <!-- Left Noz Pos -->
+ <!-- Right Noz Pos -->
+
+ <!-- Left Oil Press -->
+ <animation>
+  <type>textranslate</type>
+  <object-name>LOilPressOnes</object-name>
+  <property>engines/engine[0]/oil-pressure-psi</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>LOilPressTens</object-name>
+  <property>engines/engine[0]/oil-pressure-psi</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>LOilPressHundreds</object-name>
+  <property>engines/engine[0]/oil-pressure-psi</property>
+  <factor>0.001</factor>
+  <step>100</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <!-- Right Oil Press -->
+ <animation>
+  <type>textranslate</type>
+  <object-name>ROilPressOnes</object-name>
+  <property>engines/engine[1]/oil-pressure-psi</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>ROilPressTens</object-name>
+  <property>engines/engine[1]/oil-pressure-psi</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>ROilPressHundreds</object-name>
+  <property>engines/engine[1]/oil-pressure-psi</property>
+  <factor>0.001</factor>
+  <step>100</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <!-- Left Thrust -->
+ <!-- Right Thrust -->
+
+ <!-- Left VIB?? -->
+ <!-- Right VIB?? -->
+
+ <!-- Left FuelTemp -->
+ <!-- Right FuelTemp -->
+
+ <!-- Left EPR?? -->
+ <!-- Right EPR?? -->
+
+ <!-- Left CDP?? -->
+ <!-- Right CDP?? -->
+
+ <!-- Left TDP?? -->
+ <!-- Right TDP?? -->
+
+</PropertyList>

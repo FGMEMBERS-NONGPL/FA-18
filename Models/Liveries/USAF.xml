@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">USAF</name>
+        <texture n="0">Liveries/usaf.png</texture>
+        <texture n="1">Liveries/usaf-rudder.png</texture>
+        <texture n="2">Liveries/usaf-wing-stab.png</texture>
+        <texture n="3">Liveries/usaf-fuselage.png</texture>
+      </livery>
+    </model>
+  </sim>
+</PropertyList>

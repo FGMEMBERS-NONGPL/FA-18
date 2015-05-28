@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<FG_TURBINE NAME="F404">
+<!--
+  File:     F404-GE-400.xml
+  Author:   Mathias Froehlich (Mathias.Froehlich@web.de)
+
+  F404-GE-400 engine description.
+  Sources:
+        H-1643.pdf
+	http://www.dfrc.nasa.gov/DTRS/1993/PDF/H-1910.pdf
+	http://www.geae.com/engines/military/f404/f404-400.html
+	http://www.aircraftenginedesign.com/TableB2.html
+ 	
+  Fan/Compressor Stages				3/7
+  Low-Pressure Turbine / High-Pressure Turbine	1/1
+  Maximum Diameter (Inches)			35
+  Length (Inches)				154
+  Dry Weight (Lb.)				2,195
+  Specific Fuel Consumption at Maximum Power	1.85
+  Max. Power at Sea Level			16,000
+  Overall Pressure Ratio at Maximum Power	26
+  Airflow				 	142 lbs/sec
+  Bypass Ratio					0.32
+
+  The TSFC value is a pure guess based on the TSFC/ATSFC ratio of the
+  F100-PW-229 engine configuration and the ATSFC value.
+  Also the N1/2 values are from the F100-PW-229.
+
+-->
+  MILTHRUST    10230
+  MAXTHRUST    16300
+  BYPASSRATIO  0.32
+  TSFC         0.66
+  ATSFC        1.85
+  IDLEN1       40.0
+  IDLEN2       53.0
+  MAXN1        100.0
+  MAXN2        100.0
+  AUGMENTED    1
+  AUGMETHOD    2
+  INJECTED     0
+
+  <!--
+    Tables are taken from H-1643 for the afterburning case.
+    The other cases are just copies of them lacking real data ...
+    The idle data table is taken from the F-16 engine.
+  -->
+  <TABLE NAME="IdleThrust" TYPE="TABLE">
+   Idle_power_thrust_factor
+   6
+   6
+   velocities/mach-norm
+   position/h-sl-ft
+   none
+               0   10000   20000   30000   40000  50000
+   0.0    0.0836  0.0528  0.0694  0.0899  0.1183  0.1467
+   0.2    0.0501  0.0335  0.0544  0.0797  0.1049  0.1341
+   0.4    0.0047  0.0020  0.0272  0.0595  0.0891  0.1203
+   0.6   -0.0804 -0.0560 -0.0237  0.0276  0.0718  0.1073
+   0.8   -0.2129 -0.1498 -0.1025 -0.0195  0.0473  0.0868
+   1.0   -0.2839 -0.1104 -0.0469 -0.0270 -0.0158  0.0552
+ </TABLE>
+ <TABLE NAME="MilThrust" TYPE="TABLE">
+   Military_power_thrust_factor
+   12
+   7
+   velocities/mach-norm
+   position/h-sl-ft
+   none
+             0   10000   20000   30000   35000   40000   50000
+   0.0   1.000   0.775   0.535   0.338   0.254   0.197   0.127
+   0.2   1.042   0.789   0.563   0.352   0.268   0.197   0.127
+   0.4   1.155   0.901   0.620   0.408   0.310   0.238   0.141
+   0.6   1.268   1.000   0.718   0.493   0.366   0.282   0.169
+   0.8   1.479   1.169   0.859   0.592   0.479   0.366   0.225
+   0.9   1.507   1.268   0.915   0.648   0.521   0.408   0.239
+   1.0   1.549   1.352   1.028   0.718   0.577   0.451   0.254
+   1.1   1.606   1.465   1.127   0.803   0.648   0.521   0.310
+   1.2   1.676   1.563   1.211   0.901   0.732   0.577   0.338
+   1.4   1.859   1.676   1.423   1.070   0.901   0.718   0.423
+   1.6   2.028   1.817   1.535   1.282   1.099   0.873   0.507
+   1.8   2.254   2.113   1.676   1.380   1.254   1.000   0.591
+ </TABLE>
+ <TABLE NAME="AugThrust" TYPE="TABLE">
+   Augmented_thrust_factor
+   12
+   7
+   velocities/mach-norm
+   position/h-sl-ft
+   none
+             0   10000   20000   30000   35000   40000   50000
+   0.0   1.000   0.775   0.535   0.338   0.254   0.197   0.127
+   0.2   1.042   0.789   0.563   0.352   0.268   0.197   0.127
+   0.4   1.155   0.901   0.620   0.408   0.310   0.238   0.141
+   0.6   1.268   1.000   0.718   0.493   0.366   0.282   0.169
+   0.8   1.479   1.169   0.859   0.592   0.479   0.366   0.225
+   0.9   1.507   1.268   0.915   0.648   0.521   0.408   0.239
+   1.0   1.549   1.352   1.028   0.718   0.577   0.451   0.254
+   1.1   1.606   1.465   1.127   0.803   0.648   0.521   0.310
+   1.2   1.676   1.563   1.211   0.901   0.732   0.577   0.338
+   1.4   1.859   1.676   1.423   1.070   0.901   0.718   0.423
+   1.6   2.028   1.817   1.535   1.282   1.099   0.873   0.507
+   1.8   2.254   2.113   1.676   1.380   1.254   1.000   0.591
+ </TABLE>
+</FG_TURBINE>
+

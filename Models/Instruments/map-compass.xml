@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<PropertyList>
+ <path>map-compass.ac</path>
+
+ <!-- This is the part of the map body. hide it here -->
+ <animation>
+  <type>select</type>
+  <object-name>Display</object-name>
+  <condition>
+   <greater-than>
+    <property>gear/gear[2]/position-norm</property>
+    <value>0</value>
+   </greater-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>CompassRose</object-name>
+  <property>orientation/heading-deg</property>
+  <factor>1</factor>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <!-- Airspeed -->
+ <animation>
+  <type>textranslate</type>
+  <object-name>AirspeedOnes</object-name>
+  <property>velocities/airspeed-kt</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>select</type>
+  <object-name>AirspeedTens</object-name>
+  <condition>
+   <greater-than-equals>
+    <property>velocities/airspeed-kt</property>
+    <value>10.0</value>
+   </greater-than-equals>
+  </condition>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>AirspeedTens</object-name>
+  <property>velocities/airspeed-kt</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>select</type>
+  <object-name>AirspeedHundreds</object-name>
+  <condition>
+   <greater-than-equals>
+    <property>velocities/airspeed-kt</property>
+    <value>100.0</value>
+   </greater-than-equals>
+  </condition>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>AirspeedHundreds</object-name>
+  <property>velocities/airspeed-kt</property>
+  <factor>0.001</factor>
+  <step>100</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+<!--  <animation> -->
+<!--   <type>select</type> -->
+<!--   <object-name>AirspeedThousands</object-name> -->
+<!--   <condition> -->
+<!--    <greater-than-equals> -->
+<!--     <property>velocities/airspeed-kt</property> -->
+<!--     <value>1000.0</value> -->
+<!--    </greater-than-equals> -->
+<!--   </condition> -->
+<!--  </animation> -->
+
+ <!-- Groundspeed -->
+ <animation>
+  <type>textranslate</type>
+  <object-name>GroundspeedOnes</object-name>
+  <property>fdm/jsbsim/velocities/vg-fps</property>
+  <!--
+  <factor>0.1</factor>
+  <step>1</step>
+  -->
+  <factor>0.05924838</factor>
+  <step>1.68780986079282</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>select</type>
+  <object-name>GroundspeedTens</object-name>
+  <condition>
+   <greater-than-equals>
+    <property>fdm/jsbsim/velocities/vg-fps</property>
+    <value>16.8780986079282</value>
+ <!--
+    <value>10.0</value>
+ -->
+   </greater-than-equals>
+  </condition>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>GroundspeedTens</object-name>
+  <property>fdm/jsbsim/velocities/vg-fps</property>
+  <!--
+  <factor>0.01</factor>
+  <step>10</step>
+  -->
+  <factor>0.005924838</factor>
+  <step>16.8780986079282</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>select</type>
+  <object-name>GroundspeedHundreds</object-name>
+  <condition>
+   <greater-than-equals>
+    <property>fdm/jsbsim/velocities/vg-fps</property>
+    <value>168.780986079282</value>
+ <!--
+    <value>100.0</value>
+ -->
+   </greater-than-equals>
+  </condition>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>GroundspeedHundreds</object-name>
+  <property>fdm/jsbsim/velocities/vg-fps</property>
+  <!--
+  <factor>0.001</factor>
+  <step>100</step>
+  -->
+  <factor>0.0005924838</factor>
+  <step>168.780986079282</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+<!--  <animation> -->
+<!--   <type>select</type> -->
+<!--   <object-name>GroundspeedThousands</object-name> -->
+<!--   <condition> -->
+<!--    <greater-than-equals> -->
+<!--     <property>fdm/jsbsim/velocities/vg-fps</property> -->
+<!--     <value>1687.80986079282</value> -->
+<!--    </greater-than-equals> -->
+<!--   </condition> -->
+<!--  </animation> -->
+ <!--
+ <animation>
+  <type>textranslate</type>
+  <object-name>GroundspeedThousands</object-name>
+  <property>fdm/jsbsim/velocities/vg-fps</property>
+  <factor>0.00005924838</factor>
+  <step>1687.80986079282</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ -->
+
+ <!-- Time of day -->
+ <!--
+ <animation>
+  <type>textranslate</type>
+  <object-name>SecondOnes</object-name>
+  <property>instrumentation/clock/indicated-sec</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>textranslate</type>
+  <object-name>SecondTens</object-name>
+  <property>instrumentation/clock/indicated-sec</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ -->
+
+</PropertyList>
+
